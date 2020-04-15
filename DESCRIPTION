@@ -14,7 +14,11 @@ LazyData: true
 Suggests: 
     testthat (>= 2.1.0),
     knitr,
+    dplyr,
+    tidyr,
+    purrr,
     rmarkdown
 Imports: 
     dplyr
 VignetteBuilder: knitr
+RoxygenNote: 7.1.0
