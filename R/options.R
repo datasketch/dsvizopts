@@ -125,13 +125,14 @@ dsviz_default_opts <- function(
     theme = themeOpts
   )
 }
-
+#' @export
 dsviz_defaults <- function(flat = FALSE){
   opts <- dsviz_default_opts()
   if(flat) return(options_flatten(opts))
   opts
 }
 
+#' @export
 merge_dsviz_options <- function(...){
   default_opts <- dsviz_defaults(flat = TRUE)
   opts_flat <- mergeOptions(..., defaults = default_opts)
