@@ -5,8 +5,8 @@
 #' @param agg defaults to "sum"
 #' @param agg_text defaults to NULL
 #' @param caption defaults to NULL
-#' @param colors defaults to NULL
-#' @param color_scale defaults to discrete"
+#' @param pallete_colors defaults to NULL
+#' @param color_by defaults to discrete"
 #' @param drop_na defaults to FALSE
 #' @param format_num defaults to "1,500.00"
 #' @param highlight_value defaults to NULL
@@ -38,8 +38,8 @@ dsviz_default_opts <- function(
                            agg = "sum",
                            agg_text = NULL,
                            caption = NULL,
-                           colors = NULL,
-                           color_scale ="discrete",
+                           pallete_colors = NULL,
+                           color_by = NULL,
                            drop_na = FALSE,
                            highlight_value = NULL,
                            highlight_value_color = '#F9B233',
@@ -81,7 +81,8 @@ dsviz_default_opts <- function(
   )
   postprocessOpts <- list(
     sort = "no",
-    slice_n = NA
+    slice_n = NULL,
+    order = NULL
   )
 
   styleOpts <- list(
@@ -90,8 +91,8 @@ dsviz_default_opts <- function(
     format_dat_sample = "Jun 24 2010",
     format_num_sample = "1,500.00",
     format_cat_sample = "Title case",
-    locale = "en-US"
-    # label_wrap = 12,
+    locale = "en-US",
+    label_wrap = 12
     # label_ratio = 1,
     # highlight_value = NULL,
     # highlight_value_color = '#F9B233',
