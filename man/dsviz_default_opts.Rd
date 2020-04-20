@@ -8,8 +8,8 @@ dsviz_default_opts(
   agg = "sum",
   agg_text = NULL,
   caption = NULL,
-  colors = NULL,
-  color_scale = "discrete",
+  pallete_colors = NULL,
+  color_by = NULL,
   drop_na = FALSE,
   highlight_value = NULL,
   highlight_value_color = "#F9B233",
@@ -44,9 +44,9 @@ dsviz_default_opts(
 
 \item{caption}{defaults to NULL}
 
-\item{colors}{defaults to NULL}
+\item{pallete_colors}{defaults to NULL}
 
-\item{color_scale}{defaults to discrete"}
+\item{color_by}{defaults to discrete"}
 
 \item{drop_na}{defaults to FALSE}
 
