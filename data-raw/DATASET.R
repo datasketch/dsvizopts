@@ -1,7 +1,9 @@
 ## code to prepare `DATASET` dataset goes here
 
+usethis::use_data("DATASET")
+
 theme_datasketch <- list(
-  logo = "datasketch",
+  logo = "",
   logo_position = "right",
   palette_colors = datasketch_style()$palette,
   branding_include = FALSE,

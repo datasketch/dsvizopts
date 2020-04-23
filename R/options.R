@@ -101,7 +101,7 @@ dsviz_default_opts <- function(
     orientation = "ver"
   )
   titleOpts <- list(
-   title = NULL,
+    title = NULL,
     ver_title = NULL,
     hor_title = NULL,
     subtitle = NULL,
@@ -109,11 +109,12 @@ dsviz_default_opts <- function(
   )
 
   themeOpts <- list(
-    theme = list(
+    logo = NULL,
     palette_colors = datasketch_style()$palette,
     background_color = datasketch_style()$background,
     has_subtitle = FALSE
-  ))
+  )
+  themeOpts <- modifyList(themeOpts, default_theme_opts())
 
   list(
     preprocess = preprocessOpts,
@@ -137,8 +138,8 @@ merge_dsviz_options <- function(...){
   default_opts <- dsviz_defaults(flat = TRUE)
   opts_flat <- mergeOptions(..., defaults = default_opts)
 
-   #theme <- pull_opt_group(opts_flat, "theme")
-  # theme$has_subtitle <- !is.null(opts_flat$subtitle)
+  theme <- pull_opt_group(opts_flat, "theme")
+  theme$has_subtitle <- !is.null(opts_flat$subtitle)
 
   list(
     preprocess = pull_opt_group(opts_flat, "preprocess"),
@@ -147,7 +148,7 @@ merge_dsviz_options <- function(...){
     style = pull_opt_group(opts_flat, "style"),
     chart = pull_opt_group(opts_flat, "chart"),
     title = pull_opt_group(opts_flat, "title"),
-    theme = pull_opt_group(opts_flat, "theme")$theme
+    theme = theme
   )
 }
 
