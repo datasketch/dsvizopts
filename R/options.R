@@ -136,7 +136,9 @@ dsviz_defaults <- function(flat = FALSE){
 #' @export
 merge_dsviz_options <- function(...){
   default_opts <- dsviz_defaults(flat = TRUE)
-  opts_flat <- mergeOptions(..., defaults = default_opts)
+  args <- list(...)
+  # flat_args <- options_flatten(args)
+  opts_flat <- mergeOptions(args, defaults = default_opts)
 
   theme <- pull_opt_group(opts_flat, "theme")
   theme$has_subtitle <- !is.null(opts_flat$subtitle)
@@ -152,25 +154,14 @@ merge_dsviz_options <- function(...){
   )
 }
 
-pull_opt_group <- function(opts, group){
-  defaults <- dsviz_defaults(flat = FALSE)
-  group_names <- map(defaults, names)
-  if(!group %in% names(defaults))
-    stop("Option group not found, must be one of: ",
-         paste0(names(group_names), collapse = ", "))
-  opts[group_names[[group]]]
-}
-
-
 
 
 
 #' Merge Options
 #'
-#' Merges (...) parameters to an opts list and ads a
+#' Merges (...) parameters to an opts list
 #'
 #' @param defaults A list to provide base structures to parameters.
-#'
 #' @noRd
 mergeOptions <- function(..., defaults = NULL){
   args <- list(...)
@@ -179,24 +170,40 @@ mergeOptions <- function(..., defaults = NULL){
   # str(opts_list)
   args$opts <- NULL
   args_opts <- modifyList(args, opts_list %||% list())
+  flat_args_opts <- options_flatten(args_opts)
   # str(args_opts)
-  modifyList(defaults, args_opts)
+  modifyList(defaults, flat_args_opts)
 }
+
+
+
+pull_opt_group <- function(opts, group){
+  defaults <- dsviz_defaults(flat = FALSE)
+  group_names <- map(defaults, names)
+  if(!group %in% names(defaults))
+    stop("Option group not found, must be one of: ",
+         paste0(names(group_names), collapse = ", "))
+  group_opts <- group_names[[group]]
+  pulled_opts <- opts[group_opts]
+  names(pulled_opts) <- group_opts
+  pulled_opts
+}
+
 
 is_flat_list <- function(x) all(map_lgl(x, ~!is.list(.)))
 
 options_flatten <- function(x){
-  flat_x <- unlist(x, recursive = FALSE)
+  flat_x <- lapply(rapply(x, enquote, how="unlist"), eval)
   flat_names <- names(flat_x)
-  flat_names <- gsub("^.+\\.","",flat_names)
-  if(length(unique(flat_names)) != length(flat_names))
-    stop("Not unique names for options: ",
-         paste(which_repeated(flat_names),collapse = ", "))
-  names(flat_x) <- flat_names
+  new_flat_names <- sub('^.*\\.([[:alnum:]_]+)$', '\\1', flat_names)
+  idx_last_occur <- get_idx_last_occurrence(new_flat_names)
+  names(flat_x) <- new_flat_names
+  flat_x <- flat_x[idx_last_occur]
   flat_x
 }
 
-which_repeated <- function(x){
-  names(which(table(x)>1))
+get_idx_last_occurrence <- function(x){
+  # https://stackoverflow.com/questions/27801589/find-the-indices-of-last-occurrence-of-the-unique-elements-in-a-vector
+  length(x)-match(unique(x),rev(x))+1
 }
 
