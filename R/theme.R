@@ -15,7 +15,7 @@ local_logo_path <- function(logo = NULL, background = "#ffffff"){
 default_theme_opts <- function(){
 
   list(
-    logo = "",
+    logo = "datasketch",
     logo_position = "right",
     palette_colors = datasketch_style()$palette,
     branding_include = FALSE,
