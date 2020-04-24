@@ -92,7 +92,8 @@ dsviz_default_opts <- function(
     format_num_sample = "1,500.00",
     format_cat_sample = "Title case",
     locale = "en-US",
-    label_wrap = 12
+    label_wrap = 12,
+    spline = FALSE
     # label_ratio = 1,
     # highlight_value = NULL,
     # highlight_value_color = '#F9B233',

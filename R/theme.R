@@ -24,6 +24,9 @@ default_theme_opts <- function(){
     background_color = datasketch_style()$background,
     branding_background_color = "",
     accent_color = "#d2a045",
+
+    # GENERAL STYLES
+    text_show = TRUE,
     text_size = 11,
     text_color = "#6D8089",
     text_family = "Ubuntu",
@@ -78,12 +81,16 @@ default_theme_opts <- function(){
     plot_margin_right = NULL,
 
     # SPACE INTO AXIS (PLOT AREA)
-    plot_background_color = "transparent",
+    plot_background_color = NULL,
     plot_border_color = "#CCCCCC",
-    plot_border_width = 0
+    plot_border_width = 0,
 
+    # DATA LABELS STYLE
 
-
+    label_color = "contrast",
+    label_size = 11,
+    label_text_decoration = NULL,
+    label_text_outline = "1px contrast"
 
   )
 }
