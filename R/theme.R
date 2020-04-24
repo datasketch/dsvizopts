@@ -17,6 +17,7 @@ default_theme_opts <- function(){
   list(
     logo = "datasketch",
     logo_position = "right",
+
     palette_colors = datasketch_style()$palette,
     branding_include = FALSE,
     branding_text = "",
@@ -28,14 +29,28 @@ default_theme_opts <- function(){
     text_family = "Ubuntu",
     line_color = "#DDDDF9",
     line_size = 1,
+
+    # TITLE STYLES
     title_color = "#444444",
-    title_allign = "left", # left - center - right
+    title_align = "left", # left - center - right
     title_family = "Montserrat",
+    title_size = 21,
+    title_weight = 700, # too, with ligh, bold...
+
+    # SUBTITILES STYLES
     subtitle_color = "#999999",
-    subtitle_allign = "left", # left - center - right
+    subtitle_align = "left", # left - center - right
+    subtitle_size = 17,
+    subtitle_weight = 700,
+
+
     # caption = "", # Needed to update chart caption when logo defined
     caption_color = "#AAAAAA",
-    caption_allign = "right", # left - center - right
+    caption_align = "right", # left - center - right
+    caption_size = 17,
+
+
+
     axis_title_color = '#5A6B72',
     axis_line_color = '#DDDDF9',
     axis_ticks_color = '#DDDDF9',
