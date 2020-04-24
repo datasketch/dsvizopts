@@ -4,6 +4,9 @@ test_that("Options can be flattened",{
 
   ## flatten options
 
+  expect_null(options_flatten(NULL))
+  expect_equal(options_flatten(list()), list())
+
   x <- list(a = 1, b = list(b1name = "b1", b2name = "b2"),
             c = list(c1name = "c", c2name = c("c2a","c2b")))
   expect_equal(names(options_flatten(x)),c("a","b1name","b2name","c1name","c2name"))
@@ -13,9 +16,9 @@ test_that("Options can be flattened",{
             c = list(c1name = "c", c2name = c("c2a","c2b")))
   # OJO options flatten drop nulls
   expect_equal(options_flatten(x),
-               list(a = 1, b1name = "b1",
+               list(a = 1, b1name = "b1", b2name = NULL,
                     c1name = "c", c2name = c("c2a","c2b")))
-  expect_equal(names(options_flatten(x)),c("a","b1name","c1name","c2name"))
+  expect_equal(names(options_flatten(x)),c("a","b1name","b2name","c1name","c2name"))
 
   x <- list(a = "a", bg = 0, opts = list(bg = 1, theme = list(bg = 3)))
   expect_equal(options_flatten(x), list(a = "a", bg = 3))
