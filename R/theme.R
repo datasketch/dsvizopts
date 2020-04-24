@@ -39,6 +39,22 @@ default_theme_opts <- function(){
     axis_title_color = '#5A6B72',
     axis_line_color = '#DDDDF9',
     axis_ticks_color = '#DDDDF9',
-    grid_color =  "#fafafa"
+    grid_color =  "#fafafa",
+
+
+    # SPACE THAT COVERS ALL THE GRAPHIC
+    plot_margin_bottom = NULL,
+    plot_margin_top = NULL,
+    plot_margin_left = NULL,
+    plot_margin_right = NULL,
+
+    # SPACE INTO AXIS (PLOT AREA)
+    plot_background_color = "transparent",
+    plot_border_color = "#CCCCCC",
+    plot_border_width = 0
+
+
+
+
   )
 }

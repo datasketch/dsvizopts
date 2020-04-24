@@ -109,9 +109,6 @@ dsviz_default_opts <- function(
   )
 
   themeOpts <- list(
-    logo = NULL,
-    palette_colors = datasketch_style()$palette,
-    background_color = datasketch_style()$background,
     has_subtitle = FALSE
   )
   themeOpts <- modifyList(themeOpts, default_theme_opts())
