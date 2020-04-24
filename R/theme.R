@@ -56,13 +56,18 @@ default_theme_opts <- function(){
     axis_line_color = '#DDDDF9',
     axis_line_width = 1,
     axis_ticks_color = '#DDDDF9',
-
+    axis_tick_length = 10,
 
     # GRID X
     grid_x_enabled = TRUE,
     grid_x_color =  "#fafafa",
     grid_x_width = 0,
-    tick_x_length = 10,
+
+    # GRID Y
+    grid_y_enabled = TRUE,
+    grid_y_color =  "#DDDDF9",
+    grid_y_width = 1,
+    grid_y_dash = "dot",
 
 
 
