@@ -111,7 +111,7 @@ dsviz_default_opts <- function(
   themeOpts <- list(
     has_subtitle = FALSE
   )
-  themeOpts <- modifyList(themeOpts, default_theme_opts())
+  themeOpts <- modifyList(themeOpts, default_theme_opts(), keep.null = TRUE)
 
   list(
     preprocess = preprocessOpts,
@@ -166,10 +166,10 @@ mergeOptions <- function(..., defaults = NULL){
   opts_list <- args$opts
   # str(opts_list)
   args$opts <- NULL
-  args_opts <- modifyList(args, opts_list %||% list())
+  args_opts <- modifyList(args, opts_list %||% list(), keep.null = TRUE)
   flat_args_opts <- options_flatten(args_opts)
   # str(args_opts)
-  modifyList(defaults, flat_args_opts)
+  modifyList(defaults, flat_args_opts, keep.null = TRUE)
 }
 
 
