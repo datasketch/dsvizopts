@@ -50,11 +50,20 @@ default_theme_opts <- function(){
     caption_size = 17,
 
 
-
+    # GENERAL AXIS
     axis_title_color = '#5A6B72',
+    axis_title_size = 13,
     axis_line_color = '#DDDDF9',
+    axis_line_width = 1,
     axis_ticks_color = '#DDDDF9',
-    grid_color =  "#fafafa",
+
+
+    # GRID X
+    grid_x_enabled = TRUE,
+    grid_x_color =  "#fafafa",
+    grid_x_width = 0,
+    tick_x_length = 10,
+
 
 
     # SPACE THAT COVERS ALL THE GRAPHIC
