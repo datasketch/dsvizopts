@@ -93,13 +93,18 @@ dsviz_default_opts <- function(
     format_cat_sample = "Title case",
     locale = "en-US",
     label_wrap = 12,
-    spline = FALSE
+    spline = FALSE,
+    prefix = "",
+    suffix = "",
+    label_wrap_legend = 12
     # label_ratio = 1,
     # highlight_value = NULL,
     # highlight_value_color = '#F9B233',
   )
   chartOpts <- list(
-    orientation = "ver"
+    orientation = "ver",
+    bubble_min = "30%",
+    bubble_max = "120%"
   )
   titleOpts <- list(
     title = NULL,
