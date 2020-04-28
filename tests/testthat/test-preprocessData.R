@@ -11,3 +11,21 @@ test_that("Agreggation by groups", {
   d2 <- summarizeData(d, "sum", to_agg = units, transport)
   expect_equal(sort(unique(d2$transport)), sort(unique(d$transport)))
 })
+
+test_that("Aggs work",{
+  library(tidyverse)
+  dd <- tibble(x = c("A","A", "B", "C"), y = c("X","Y","Y","Z"), z = c(1,1,3,NA))
+
+  no_na <- preprocessData(dd, drop_na = TRUE)
+  expect_false(any(is.na(no_na)))
+
+  d_summ1 <- summarizeData(dd, agg = "sum", to_agg = z, x)
+  expect_true(d_summ1$z[d_summ1$x == "A"] == 2)
+
+  d_summ2 <- summarizeData(dd, "sum", to_agg = z, y)
+  expect_equal(d_summ2$z, c(1,4,0))
+
+
+})
+
+
