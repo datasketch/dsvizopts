@@ -3,6 +3,12 @@ test_that("Process data options", {
   d <- data.frame(a = c("Cats", "Cats", NA), b = c(1:3))
   d2 <- preprocessData(d, drop_na = TRUE)
   expect_equal(nrow(d2), 2)
+  d <- data.frame(a = c("Cats", "Cats", NA), b = c(1:3))
+  d3 <- preprocessData(d, drop_na = FALSE, na_label = "NoInfo", na_label_cols = "a")
+  expect_equal(levels(d3$a), c("Cats","NoInfo"))
+
+
+
 
 })
 

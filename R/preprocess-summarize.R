@@ -14,11 +14,25 @@ agg <- function(aggregation, ...) {
 #' @param d A data frame
 #' @param drop_na A logical value indicating if remove NA values
 #' @export
-preprocessData <- function(d, drop_na = FALSE, na_label = "(NA)"){
+preprocessData <- function(d, drop_na = FALSE,
+                           na_label = NULL, na_label_cols = NULL){
   if (drop_na){
     d <- d %>% tidyr::drop_na()
+  }else  if (!is.null(na_label)){
+    if(is.null(na_label_cols)) stop("need na_label_cols parameter")
+    d <- map(names(d), function(col){
+      if(col %in% na_label_cols){
+        if(is.character(d[[col]])) d[[col]][is.na(d[[col]])] <- na_label
+        if(is.factor(d[[col]])){
+          levs <- levels(d[[col]])
+          v <- as.character(d[[col]])
+          v[is.na(v)] <- na_label
+          d[[col]] <- factor(v, levels = c(levs, na_label))
+        }
+      }
+      d[[col]]
+    }) %>% set_names(names(d)) %>% as_tibble()
   }
-  d$a[is.na(d$a)] <- na_label
   d
 }
 
