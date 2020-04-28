@@ -14,10 +14,11 @@ agg <- function(aggregation, ...) {
 #' @param d A data frame
 #' @param drop_na A logical value indicating if remove NA values
 #' @export
-preprocessData <- function(d, drop_na = FALSE){
+preprocessData <- function(d, drop_na = FALSE, na_label = "(NA)"){
   if (drop_na){
     d <- d %>% tidyr::drop_na()
   }
+  d$a[is.na(d$a)] <- na_label
   d
 }
 
