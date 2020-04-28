@@ -94,6 +94,10 @@ dsviz_default_opts(
 \item{caption}{Caption}
 
 \item{opts}{All of the previous options can be passed as list of options opts}
+
+\item{data_labels_size}{Data labels size}
+
+\item{data_labels_color}{Data labels color}
 }
 \description{
 Chart Options

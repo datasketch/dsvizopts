@@ -25,6 +25,8 @@
 #' @param bubble_max Relative max size of bubbles in chart
 #' @param data_labels_show Show data labels
 #' @param data_labels_format_sample Format for data labels
+#' @param data_labels_size Data labels size
+#' @param data_labels_color Data labels color
 #' @param title Chart title
 #' @param ver_title Vertical axis title
 #' @param hor_title Horizontal axis titble
@@ -100,9 +102,13 @@ dsviz_default_opts <- function(drop_na = NULL,
   chartOpts <- list(
     orientation = "ver",
     bubble_min = "30%",
-    bubble_max = "120%",
+    bubble_max = "120%"
+  )
+  dataLabelsOpts <- list(
     data_lables_show = FALSE,
-    data_labels_format_sample  = NULL
+    data_labels_format_sample = NULL,
+    data_labels_size = NULL,
+    data_labels_color = NULL
   )
   titleOpts <- list(
     title = NULL,
