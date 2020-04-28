@@ -5,100 +5,89 @@
 \title{Chart Options}
 \usage{
 dsviz_default_opts(
-  agg = "sum",
+  drop_na = NULL,
+  na_label = NULL,
+  agg = NULL,
   agg_text = NULL,
-  caption = NULL,
-  pallete_colors = NULL,
-  color_by = NULL,
-  drop_na = FALSE,
-  highlight_value = NULL,
-  highlight_value_color = "#F9B233",
-  hor_label = NULL,
-  hor_line = NULL,
-  label_ratio = 1,
-  label_wrap = 12,
-  marks = c(".", ","),
-  n_digits = NULL,
-  order = NULL,
-  orientation = "ver",
-  percentage = FALSE,
-  prefix = NULL,
+  sort = NULL,
   slice_n = NULL,
-  sort = "no",
-  subtitle = NULL,
+  order = NULL,
+  axis_text_angle = NULL,
+  color_by = NULL,
+  format_dat_sample = NULL,
+  format_num_sample = NULL,
+  format_cat_sample = NULL,
+  locale = NULL,
+  label_wrap = NULL,
+  spline = NULL,
+  prefix = NULL,
   suffix = NULL,
-  text_color = "#5A6B72",
-  text_show = TRUE,
-  text_size = 3,
-  theme = NULL,
+  label_wrap_legend = NULL,
+  orientation = NULL,
+  bubble_min = NULL,
+  bubble_max = NULL,
   title = NULL,
-  ver_label = NULL,
-  ver_line = NULL,
+  ver_title = NULL,
+  hor_title = NULL,
+  subtitle = NULL,
+  caption = NULL,
   opts = NULL
 )
 }
 \arguments{
-\item{agg}{defaults to "sum"}
+\item{drop_na}{drop NA values from input data}
 
-\item{agg_text}{defaults to NULL}
+\item{na_label}{replace NA values with string}
 
-\item{caption}{defaults to NULL}
+\item{agg}{Aggregation function for groups, defaults to sum}
 
-\item{pallete_colors}{defaults to NULL}
+\item{agg_text}{When there is aggegregaton agg_text is prepended to grouped variable}
 
-\item{color_by}{defaults to discrete"}
+\item{sort}{Whether to sort the data column: asc or desc}
 
-\item{drop_na}{defaults to FALSE}
+\item{slice_n}{Slide the data from 1 to n}
 
-\item{highlight_value}{defaults to NULL}
+\item{order}{Give the order of the categories}
 
-\item{highlight_value_color}{defaults to '#F9B233'}
+\item{axis_text_angle}{Rotate axis ticks test}
 
-\item{hor_label}{defaults to NULL}
+\item{color_by}{Column to map colors}
 
-\item{hor_line}{defaults to NULL}
+\item{format_dat_sample}{Sample format for dates, e.g. "28/04/2020" or "February 28th 2020"}
 
-\item{label_ratio}{defaults to 1}
+\item{format_num_sample}{Sample format for numbers, e.g. "1,234.56" or "1'234.5678"}
 
-\item{label_wrap}{defaults to 12}
+\item{format_cat_sample}{Sample format for categories, e.g. "TITTLE", "lowercase", "Title Case"}
 
-\item{marks}{defaults to c("." "")}
+\item{locale}{Locale to use, e.g. "en-US"}
 
-\item{n_digits}{defaults to NULL}
+\item{label_wrap}{Number of characters to wrap long tick titles}
 
-\item{order}{defaults to NULL}
+\item{spline}{Spline TRUE or FALSE for line charts (html only)}
 
-\item{orientation}{defaults to "ver"}
+\item{prefix}{Add preffix to values}
 
-\item{percentage}{defaults to FALSE}
+\item{suffix}{Add suffix to values}
 
-\item{prefix}{defaults to NULL}
+\item{label_wrap_legend}{Wrap the legend string the given number of characters}
 
-\item{slice_n}{defaults to NULL}
+\item{orientation}{Chart orientation: horizonal ("hor") or verical ("ver")}
 
-\item{sort}{defaults to "no"}
+\item{bubble_min}{Relative min size of bubbles in chart}
 
-\item{subtitle}{defaults to NULL}
+\item{bubble_max}{Relative max size of bubbles in chart}
 
-\item{suffix}{defaults to NULL}
+\item{title}{Chart title}
 
-\item{text_color}{defaults to "#5A6B72"}
+\item{ver_title}{Vertical axis title}
 
-\item{text_show}{defaults to TRUE}
+\item{hor_title}{Horizontal axis titble}
 
-\item{text_size}{defaults to 3}
+\item{subtitle}{Subtitle}
 
-\item{theme}{defaults to NULL}
+\item{caption}{Caption}
 
-\item{title}{defaults to NULL}
-
-\item{ver_label}{defaults to NULL}
-
-\item{ver_line}{defaults to NULL}
-
-\item{opts}{defaults to NULL}
-
-\item{format_num}{defaults to "1,500.00"}
+\item{opts}{All of the previous options can be passed as list of options opts}
 }
 \description{
 Chart Options

@@ -1,6 +1,107 @@
 
+#' Theme Options
+#'
+#' @param logo Logo path or url
+#' @param logo_position Logo "left" or "right"
+#' @param palette_colors Vector of colors
+#' @param branding_include Include branding logical
+#' @param branding_text Text for branding bar
+#' @param background_color Plot background color
+#' @param branding_background_color Branding bar background color
+#' @param accent_color ?
+#' @param text_show ?
+#' @param text_size Size of text in pt
+#' @param text_color Text color
+#' @param text_family Font
+#' @param line_color Axis and grid line colors
+#' @param line_size Line size
+#' @param title_color Color for title text
+#' @param title_align Alignment of title "left", "center" or "right"
+#' @param title_family Title font
+#' @param title_size Title size, defaults to 1.1 text_size
+#' @param title_weight Font weight for title
+#' @param subtitle_color Color for subtitle text
+#' @param subtitle_align Alignment of subtitle "left", "center" or "right"
+#' @param subtitle_size Subtitle size, defaults to 1.1 text_size
+#' @param subtitle_weight Font weight for subtitle
+#' @param caption_color Color for caption text
+#' @param caption_align Alignment of caption "left", "center" or "right"
+#' @param caption_size caption size, defaults to 1.1 text_size
+#' @param axis_title_color Color for axis text
+#' @param axis_title_size Axis text size
+#' @param axis_line_color Axis line color
+#' @param axis_line_width Axis line width
+#' @param axis_ticks_color Axis ticks color
+#' @param axis_tick_length Axis tick length
+#' @param grid_x_enabled Enable horizontal grid
+#' @param grid_x_color Horizontal grid color
+#' @param grid_x_width Horizontal grid line width
+#' @param grid_y_enabled Enable vertical grid
+#' @param grid_y_color Vertical grid color
+#' @param grid_y_width Verical grid line width
+#' @param grid_y_dash ?
+#' @param plot_margin_bottom Plot margin bottom
+#' @param plot_margin_top Plot margin top
+#' @param plot_margin_left Plot margin left
+#' @param plot_margin_right Plot margin right
+#' @param plot_background_color ? Chart background color
+#' @param plot_border_color ? Chart border color
+#' @param plot_border_width ? Chart border width
+#' @param label_color ? Text color
+#' @param label_size ? Text size
+#' @param label_text_decoration ? Text decoration
+#' @param label_text_outline ? Text outline
 #' @export
-default_theme_opts <- function(){
+default_theme_opts <- function( logo = NULL,
+                                logo_position = NULL,
+                                palette_colors = NULL,
+                                branding_include = NULL,
+                                branding_text = NULL,
+                                background_color = NULL,
+                                branding_background_color = NULL,
+                                accent_color = NULL,
+                                text_show = NULL,
+                                text_size = NULL,
+                                text_color = NULL,
+                                text_family = NULL,
+                                line_color = NULL,
+                                line_size = NULL,
+                                title_color = NULL,
+                                title_align = NULL,
+                                title_family = NULL,
+                                title_size = NULL,
+                                title_weight = NULL,
+                                subtitle_color = NULL,
+                                subtitle_align = NULL,
+                                subtitle_size = NULL,
+                                subtitle_weight = NULL,
+                                caption_color = NULL,
+                                caption_align = NULL,
+                                caption_size = NULL,
+                                axis_title_color = NULL,
+                                axis_title_size = NULL,
+                                axis_line_color = NULL,
+                                axis_line_width = NULL,
+                                axis_ticks_color = NULL,
+                                axis_tick_length = NULL,
+                                grid_x_enabled = NULL,
+                                grid_x_color = NULL,
+                                grid_x_width = NULL,
+                                grid_y_enabled = NULL,
+                                grid_y_color = NULL,
+                                grid_y_width = NULL,
+                                grid_y_dash = NULL,
+                                plot_margin_bottom = NULL,
+                                plot_margin_top = NULL,
+                                plot_margin_left = NULL,
+                                plot_margin_right = NULL,
+                                plot_background_color = NULL,
+                                plot_border_color = NULL,
+                                plot_border_width = NULL,
+                                label_color = NULL,
+                                label_size = NULL,
+                                label_text_decoration = NULL,
+                                label_text_outline = NULL){
 
   list(
     logo = "datasketch",

@@ -6,6 +6,9 @@
 \usage{
 agg(aggregation, ...)
 }
+\arguments{
+\item{aggregation}{one of sum, mean, or similar function}
+}
 \description{
-Aggregation
+Aggregation functions for grouped data.frames
 }

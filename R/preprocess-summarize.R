@@ -1,4 +1,9 @@
 #' Aggregation
+#'
+#' Aggregation functions for grouped data.frames
+#'
+#' @param aggregation one of sum, mean, or similar function
+#' @export
 agg <- function(aggregation, ...) {
   if (!is.null(aggregation) | nchar(aggregation) > 0 | !is.na(aggregation)) {
     do.call(aggregation, list(..., na.rm = TRUE))
@@ -17,9 +22,13 @@ preprocessData <- function(d, drop_na = FALSE){
 }
 
 #' Summarize Data
+#'
+#' Summarise a data.frame with the given aggregation function
+#'
 #' @param df A data.frame
-#' @param agg
-#' @param to_agg
+#' @param agg one of sum, mean, or similar function
+#' @param to_agg Columns to aggregate
+#' @param ... Variables to group
 #' @export
 summarizeData <- function(df, agg, to_agg, ...) {
   group_var <- rlang::enquos(...)

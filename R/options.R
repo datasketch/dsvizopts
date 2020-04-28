@@ -2,69 +2,61 @@
 #' Chart Options
 #'
 #' @name dsviz_default_opts
-#' @param agg defaults to "sum"
-#' @param agg_text defaults to NULL
-#' @param caption defaults to NULL
-#' @param pallete_colors defaults to NULL
-#' @param color_by defaults to discrete"
-#' @param drop_na defaults to FALSE
-#' @param format_num defaults to "1,500.00"
-#' @param highlight_value defaults to NULL
-#' @param highlight_value_color defaults to '#F9B233'
-#' @param hor_label defaults to NULL
-#' @param hor_line defaults to NULL
-#' @param label_ratio defaults to 1
-#' @param label_wrap defaults to 12
-#' @param marks defaults to c("." "")
-#' @param n_digits defaults to NULL
-#' @param order defaults to NULL
-#' @param orientation defaults to "ver"
-#' @param percentage defaults to FALSE
-#' @param prefix defaults to NULL
-#' @param slice_n defaults to NULL
-#' @param sort defaults to "no"
-#' @param subtitle defaults to NULL
-#' @param suffix defaults to NULL
-#' @param text_color defaults to "#5A6B72"
-#' @param text_show defaults to TRUE
-#' @param text_size defaults to 3
-#' @param theme defaults to NULL
-#' @param title defaults to NULL
-#' @param ver_label defaults to NULL
-#' @param ver_line defaults to NULL
-#' @param opts defaults to NULL
+#' @param drop_na drop NA values from input data
+#' @param na_label replace NA values with string
+#' @param agg Aggregation function for groups, defaults to sum
+#' @param agg_text When there is aggegregaton agg_text is prepended to grouped variable
+#' @param sort Whether to sort the data column: asc or desc
+#' @param slice_n Slide the data from 1 to n
+#' @param order Give the order of the categories
+#' @param axis_text_angle Rotate axis ticks test
+#' @param color_by Column to map colors
+#' @param format_dat_sample  Sample format for dates, e.g. "28/04/2020" or "February 28th 2020"
+#' @param format_num_sample Sample format for numbers, e.g. "1,234.56" or "1'234.5678"
+#' @param format_cat_sample Sample format for categories, e.g. "TITTLE", "lowercase", "Title Case"
+#' @param locale Locale to use, e.g. "en-US"
+#' @param label_wrap Number of characters to wrap long tick titles
+#' @param spline Spline TRUE or FALSE for line charts (html only)
+#' @param prefix Add preffix to values
+#' @param suffix Add suffix to values
+#' @param label_wrap_legend Wrap the legend string the given number of characters
+#' @param orientation Chart orientation: horizonal ("hor") or verical ("ver")
+#' @param bubble_min Relative min size of bubbles in chart
+#' @param bubble_max Relative max size of bubbles in chart
+#' @param title Chart title
+#' @param ver_title Vertical axis title
+#' @param hor_title Horizontal axis titble
+#' @param subtitle Subtitle
+#' @param caption Caption
+#' @param opts All of the previous options can be passed as list of options opts
 #' @export
-dsviz_default_opts <- function(
-                           agg = "sum",
-                           agg_text = NULL,
-                           caption = NULL,
-                           pallete_colors = NULL,
-                           color_by = NULL,
-                           drop_na = FALSE,
-                           highlight_value = NULL,
-                           highlight_value_color = '#F9B233',
-                           hor_label = NULL,
-                           hor_line = NULL,
-                           label_ratio = 1,
-                           label_wrap = 12,
-                           marks = c(".", ","),
-                           n_digits = NULL,
-                           order = NULL,
-                           orientation = "ver",
-                           percentage = FALSE,
-                           prefix = NULL,
-                           slice_n = NULL,
-                           sort = "no",
-                           subtitle = NULL,
-                           suffix = NULL,
-                           text_color = "#5A6B72",
-                           text_show = TRUE,
-                           text_size = 3,
-                           theme = NULL,
-                           title = NULL,
-                           ver_label = NULL,
-                           ver_line = NULL,
-                           opts = NULL){
+dsviz_default_opts <- function(drop_na = NULL,
+                               na_label = NULL,
+                               agg = NULL,
+                               agg_text = NULL,
+                               sort = NULL,
+                               slice_n = NULL,
+                               order = NULL,
+                               axis_text_angle = NULL,
+                               color_by = NULL,
+                               format_dat_sample = NULL,
+                               format_num_sample = NULL,
+                               format_cat_sample = NULL,
+                               locale = NULL,
+                               label_wrap = NULL,
+                               spline = NULL,
+                               prefix = NULL,
+                               suffix = NULL,
+                               label_wrap_legend = NULL,
+                               orientation = NULL,
+                               bubble_min = NULL,
+                               bubble_max = NULL,
+                               title = NULL,
+                               ver_title = NULL,
+                               hor_title = NULL,
+                               subtitle = NULL,
+                               caption = NULL,
+                               opts = NULL){
 
   # opts$agg_text<- opts$agg_text %||% opts$agg
   # opts$palette_colors <- opts$palette_colors %||% opts$theme$palette_colors
