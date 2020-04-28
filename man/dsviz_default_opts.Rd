@@ -26,6 +26,8 @@ dsviz_default_opts(
   orientation = NULL,
   bubble_min = NULL,
   bubble_max = NULL,
+  data_labels_show = NULL,
+  data_labels_format_sample = NULL,
   title = NULL,
   ver_title = NULL,
   hor_title = NULL,
@@ -76,6 +78,10 @@ dsviz_default_opts(
 \item{bubble_min}{Relative min size of bubbles in chart}
 
 \item{bubble_max}{Relative max size of bubbles in chart}
+
+\item{data_labels_show}{Show data labels}
+
+\item{data_labels_format_sample}{Format for data labels}
 
 \item{title}{Chart title}
 
