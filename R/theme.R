@@ -1,17 +1,5 @@
 
 #' @export
-local_logo_path <- function(logo = NULL, background = "#ffffff"){
-  if(is.null(logo)) return()
-  if(logo == "datasketch"){
-    logo_path <- system.file("logo",package = "dsvizopts")
-    light_dark <- paletero::which_contrast(background)
-    logo <- file.path(logo_path,paste0("ds-logo-",light_dark,".png"))
-  }
-  logo
-}
-
-
-#' @export
 default_theme_opts <- function(){
 
   list(
@@ -94,3 +82,17 @@ default_theme_opts <- function(){
 
   )
 }
+
+
+
+#' @export
+local_logo_path <- function(logo = NULL, background = "#ffffff"){
+  if(is.null(logo)) return()
+  if(logo == "datasketch"){
+    logo_path <- system.file("logo",package = "dsvizopts")
+    light_dark <- paletero::which_contrast(background)
+    logo <- file.path(logo_path,paste0("ds-logo-",light_dark,".png"))
+  }
+  logo
+}
+

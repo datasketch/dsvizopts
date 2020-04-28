@@ -33,7 +33,7 @@
 #' @param ver_label defaults to NULL
 #' @param ver_line defaults to NULL
 #' @param opts defaults to NULL
-#' @import homodatum
+#' @export
 dsviz_default_opts <- function(
                            agg = "sum",
                            agg_text = NULL,
