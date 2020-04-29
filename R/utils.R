@@ -1,4 +1,3 @@
-#'@export
 sysfile <- function(..., package){
   if (is.null(package)){
     path = file.path(...)
@@ -8,7 +7,6 @@ sysfile <- function(..., package){
   path
 }
 
-#'@export
 `%||%` <- function (x, y) {
   if (rlang::is_empty(x))
     return(y)
@@ -20,14 +18,12 @@ sysfile <- function(..., package){
 }
 
 
-#'@export
 is.empty <- function(x){
   if(length(x) == 0) return(TRUE)
   if(length(x) == 1 && nchar(x) == 0) return(TRUE)
   !as.logical(length(x))
 }
 
-#'@export
 removeNulls <- function(x){
   if (length(x) == 0 || !is.list(x))
     return(x)
@@ -35,13 +31,11 @@ removeNulls <- function(x){
   x[!unlist(lapply(x,is.null))]
 }
 
-#'@export
 file_path_sans_ext <- function (x)
 {
   sub("([^.]+)\\.[[:alnum:]]+$", "\\1", x)
 }
 
-#'@export
 file_ext <- function (x)
 {
   pos <- regexpr("\\.([[:alnum:]]+)$", x)

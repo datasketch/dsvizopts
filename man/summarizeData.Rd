@@ -8,7 +8,13 @@ summarizeData(df, agg, to_agg, ...)
 }
 \arguments{
 \item{df}{A data.frame}
+
+\item{agg}{one of sum, mean, or similar function}
+
+\item{to_agg}{Columns to aggregate}
+
+\item{...}{Variables to group}
 }
 \description{
-Summarize Data
+Summarise a data.frame with the given aggregation function
 }

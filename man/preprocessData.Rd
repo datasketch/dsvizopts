@@ -4,7 +4,7 @@
 \alias{preprocessData}
 \title{Drop NA}
 \usage{
-preprocessData(d, drop_na = FALSE)
+preprocessData(d, drop_na = FALSE, na_label = NULL, na_label_cols = NULL)
 }
 \arguments{
 \item{d}{A data frame}
