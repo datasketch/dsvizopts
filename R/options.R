@@ -82,7 +82,8 @@ dsviz_default_opts <- function(
   postprocessOpts <- list(
     sort = "no",
     slice_n = NULL,
-    order = NULL
+    order = NULL,
+    percentage = FALSE
   )
 
   styleOpts <- list(
@@ -103,8 +104,12 @@ dsviz_default_opts <- function(
   )
   chartOpts <- list(
     orientation = "ver",
-    bubble_min = "30%",
-    bubble_max = "120%"
+    graph_type = "grouped",
+    highlight_value = NULL,
+    highlight_value_color = "#50c5b7",
+    bubble_min = 30,
+    bubble_max = 120,
+    bubble_opacity = 1
   )
   titleOpts <- list(
     title = NULL,

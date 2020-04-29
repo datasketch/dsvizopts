@@ -90,7 +90,12 @@ default_theme_opts <- function(){
     label_color = "contrast",
     label_size = 11,
     label_text_decoration = NULL,
-    label_text_outline = "1px contrast"
+    label_text_outline = "1px contrast",
+
+    # LEGEND STYLE
+    legend_color = "contrast",
+    legend_family = "Montserrat",
+    legend_size = 13
 
   )
 }
