@@ -109,8 +109,19 @@ dsviz_default_opts <- function(drop_na = NULL,
     bubble_max = 120,
     bubble_opacity = 1
   )
+
+  scatterOps <- list(
+    prefix_x = "",
+    suffix_x = "",
+    prefix_y = "",
+    suffix_y = "",
+    regression = FALSE,
+    regression_color = '#d35400',
+    regression_equation = TRUE
+  )
+
   dataLabelsOpts <- list(
-    data_lables_show = FALSE,
+    data_labels_show = FALSE,
     data_labels_format_sample = NULL,
     data_labels_size = NULL,
     data_labels_color = NULL
@@ -135,6 +146,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     style = styleOpts,
     chart = chartOpts,
     title = titleOpts,
+    scatter = scatterOps,
     theme = themeOpts
   )
 }
@@ -162,6 +174,7 @@ merge_dsviz_options <- function(...){
     style = pull_opt_group(opts_flat, "style"),
     chart = pull_opt_group(opts_flat, "chart"),
     title = pull_opt_group(opts_flat, "title"),
+    scatter = pull_opt_group(opts_flat, "scatter"),
     theme = theme
   )
 }
