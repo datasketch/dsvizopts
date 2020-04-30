@@ -121,6 +121,13 @@ dsviz_default_opts <- function(drop_na = NULL,
       bubble_min = 30,
       bubble_max = 120,
       bubble_opacity = 1
+    ),
+    maps <- list(
+      graticule = FALSE,
+      graticule_color = '#cccccc',
+      graticule_interval = 50,
+      graticule_weight = 1,
+      tiles = NULL
     )
   )
 
