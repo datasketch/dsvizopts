@@ -79,10 +79,6 @@ dsviz_default_opts(
 
 \item{bubble_max}{Relative max size of bubbles in chart}
 
-\item{data_labels_show}{Show data labels}
-
-\item{data_labels_format_sample}{Format for data labels}
-
 \item{title}{Chart title}
 
 \item{ver_title}{Vertical axis title}
@@ -95,9 +91,13 @@ dsviz_default_opts(
 
 \item{opts}{All of the previous options can be passed as list of options opts}
 
-\item{data_labels_size}{Data labels size}
+\item{dataLabels_show}{Show data labels}
 
-\item{data_labels_color}{Data labels color}
+\item{dataLabels_format_sample}{Format for data labels}
+
+\item{dataLabels_size}{Data labels size}
+
+\item{dataLabels_color}{Data labels color}
 }
 \description{
 Chart Options

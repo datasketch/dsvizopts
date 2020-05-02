@@ -23,10 +23,10 @@
 #' @param orientation Chart orientation: horizonal ("hor") or verical ("ver")
 #' @param bubble_min Relative min size of bubbles in chart
 #' @param bubble_max Relative max size of bubbles in chart
-#' @param data_labels_show Show data labels
-#' @param data_labels_format_sample Format for data labels
-#' @param data_labels_size Data labels size
-#' @param data_labels_color Data labels color
+#' @param dataLabels_show Show data labels
+#' @param dataLabels_format_sample Format for data labels
+#' @param dataLabels_size Data labels size
+#' @param dataLabels_color Data labels color
 #' @param title Chart title
 #' @param ver_title Vertical axis title
 #' @param hor_title Horizontal axis titble
@@ -105,10 +105,10 @@ dsviz_default_opts <- function(drop_na = NULL,
     bubble_max = "120%"
   )
   dataLabelsOpts <- list(
-    data_lables_show = FALSE,
-    data_labels_format_sample = NULL,
-    data_labels_size = NULL,
-    data_labels_color = NULL
+    dataLabels_show = FALSE,
+    dataLabels_format_sample = NULL,
+    dataLabels_size = NULL,
+    dataLabels_color = NULL
   )
   titleOpts <- list(
     title = NULL,
@@ -130,6 +130,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     style = styleOpts,
     chart = chartOpts,
     title = titleOpts,
+    dataLabels = dataLabelsOpts,
     theme = themeOpts
   )
 }
@@ -157,6 +158,7 @@ merge_dsviz_options <- function(...){
     style = pull_opt_group(opts_flat, "style"),
     chart = pull_opt_group(opts_flat, "chart"),
     title = pull_opt_group(opts_flat, "title"),
+    dataLabels = pull_opt_group(opts_flat, "dataLabels"),
     theme = theme
   )
 }
