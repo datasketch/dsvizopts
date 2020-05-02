@@ -37,6 +37,12 @@ test_that("Options are merged correctly", {
   opts_defaults <- dsvizopts:::dsviz_defaults()
   fun <- function(...){merge_dsviz_options(...)}
   opts_dsviz <- fun()
+  expect_equal(names(opts_dsviz), names(opts_defaults))
+  lapply(names(opts_dsviz), function(x){
+    message(x)
+    expect_equal(opts_dsviz[[x]], opts_defaults[[x]])
+  })
+
   expect_equal(opts_dsviz, opts_defaults)
 
   opts_dsviz <- fun(background_color = "#000000")

@@ -80,7 +80,8 @@ dsviz_default_opts <- function(drop_na = NULL,
   postprocessOpts <- list(
     sort = "no",
     slice_n = NULL,
-    order = NULL
+    order = NULL,
+    percentage = FALSE
   )
 
   styleOpts <- list(
@@ -101,9 +102,32 @@ dsviz_default_opts <- function(drop_na = NULL,
   )
   chartOpts <- list(
     orientation = "ver",
-    bubble_min = "30%",
-    bubble_max = "120%"
+    graph_type = "grouped",
+    highlight_value = NULL,
+    highlight_value_color = "#50c5b7"
   )
+
+  additionalOpts <- list(
+    # Scatter specific
+    scatter_prefix_x = "",
+    scatter_suffix_x = "",
+    scatter_prefix_y = "",
+    scatter_suffix_y = "",
+    scatter_regression = FALSE,
+    scatter_regression_color = '#d35400',
+    scatter_regression_equation = TRUE,
+    # Bubbles specific
+    bubble_min = 30,
+    bubble_max = 120,
+    bubble_opacity = 1,
+    # Map specific
+    map_graticule = FALSE,
+    map_graticule_color = '#cccccc',
+    map_graticule_interval = 50,
+    map_graticule_weight = 1,
+    map_tiles = NULL
+  )
+
   dataLabelsOpts <- list(
     dataLabels_show = FALSE,
     dataLabels_format_sample = NULL,
@@ -131,6 +155,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     chart = chartOpts,
     title = titleOpts,
     dataLabels = dataLabelsOpts,
+    additional = additionalOpts,
     theme = themeOpts
   )
 }
@@ -159,6 +184,7 @@ merge_dsviz_options <- function(...){
     chart = pull_opt_group(opts_flat, "chart"),
     title = pull_opt_group(opts_flat, "title"),
     dataLabels = pull_opt_group(opts_flat, "dataLabels"),
+    additional = pull_opt_group(opts_flat, "additional"),
     theme = theme
   )
 }
