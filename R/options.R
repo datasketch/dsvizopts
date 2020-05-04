@@ -121,6 +121,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     bubble_max = 120,
     bubble_opacity = 1,
     # Map specific
+    map_name = "world_countries",
     map_graticule = FALSE,
     map_graticule_color = '#cccccc',
     map_graticule_interval = 50,
