@@ -125,8 +125,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     map_graticule = FALSE,
     map_graticule_color = '#cccccc',
     map_graticule_interval = 50,
-    map_graticule_weight = 1,
-    map_tiles = NULL
+    map_graticule_weight = 1
   )
 
   dataLabelsOpts <- list(

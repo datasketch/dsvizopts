@@ -187,8 +187,15 @@ default_theme_opts <- function( logo = NULL,
     # LEGEND STYLE
     legend_color = "contrast",
     legend_family = "Montserrat",
-    legend_size = 13
+    legend_size = 13,
 
+
+    # MAP STYLES
+    border_weight = 2,
+    border_color = "#293845",
+    topo_fill = FALSE,
+    topo_fill_opacity = 0.3,
+    map_tiles = NULL
   )
 }
 
