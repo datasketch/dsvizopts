@@ -126,11 +126,11 @@ dsviz_default_opts <- function(drop_na = NULL,
     donut_dataLabels_pos = 1.1,
     donut_width = 0.2,
     # Map specific
+    map_name = "world_countries",
     map_graticule = FALSE,
     map_graticule_color = '#cccccc',
     map_graticule_interval = 50,
-    map_graticule_weight = 1,
-    map_tiles = NULL
+    map_graticule_weight = 1
   )
 
   dataLabelsOpts <- list(
