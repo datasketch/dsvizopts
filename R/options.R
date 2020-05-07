@@ -107,7 +107,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     highlight_value_color = "#50c5b7"
   )
 
-  additionalOpts <- list(
+  extraOpts <- list(
     # Scatter specific
     scatter_prefix_x = "",
     scatter_suffix_x = "",
@@ -120,6 +120,11 @@ dsviz_default_opts <- function(drop_na = NULL,
     bubble_min = 30,
     bubble_max = 120,
     bubble_opacity = 1,
+    # Pie
+    pie_dataLabels_pos = 1.1,
+    # Donut
+    donut_dataLabels_pos = 1.1,
+    donut_width = 0.2,
     # Map specific
     map_graticule = FALSE,
     map_graticule_color = '#cccccc',
@@ -155,7 +160,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     chart = chartOpts,
     title = titleOpts,
     dataLabels = dataLabelsOpts,
-    additional = additionalOpts,
+    extra = extraOpts,
     theme = themeOpts
   )
 }
@@ -184,7 +189,7 @@ merge_dsviz_options <- function(...){
     chart = pull_opt_group(opts_flat, "chart"),
     title = pull_opt_group(opts_flat, "title"),
     dataLabels = pull_opt_group(opts_flat, "dataLabels"),
-    additional = pull_opt_group(opts_flat, "additional"),
+    extra = pull_opt_group(opts_flat, "extra"),
     theme = theme
   )
 }

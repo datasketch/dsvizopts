@@ -115,7 +115,6 @@ default_theme_opts <- function( logo = NULL,
     accent_color = "#d2a045",
 
     # GENERAL STYLES
-    text_show = TRUE,
     text_size = 11,
     text_color = "#6D8089",
     text_family = "Ubuntu",
@@ -154,6 +153,7 @@ default_theme_opts <- function( logo = NULL,
     grid_x_enabled = TRUE,
     grid_x_color =  "#fafafa",
     grid_x_width = 0,
+    grid_y_dash = "dot",
 
     # GRID Y
     grid_y_enabled = TRUE,
@@ -175,10 +175,10 @@ default_theme_opts <- function( logo = NULL,
     plot_border_width = 0,
 
     # DATA LABELS STYLE
-    # data_labels_show = FALSE,
-    # data_labels_format_sample = NULL,
-    # data_labels_size = NULL,
-    # data_labels_color = NULL
+    # dataLabels_show = FALSE,
+    # dataLabels_format_sample = NULL,
+    # dataLabels_size = NULL,
+    # dataLabels_color = NULL
     label_color = "contrast",
     label_size = 11,
     label_text_decoration = NULL,
