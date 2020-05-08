@@ -96,12 +96,14 @@ test_that("Options are merged correctly", {
                                     )
   expect_equal(opts_dsviz$theme$background_color, "#000006")
 
-
-
-
-
-
-
-
-
 })
+
+test_that("Filter extra options",{
+
+  opts <- dsvizopts:::dsviz_defaults()
+  pie_extra <- get_extra_opts(opts, pattern = "pie")
+  expect_equal(pie_extra, list(pie_dataLabels_pos = 1.1))
+})
+
+
+
