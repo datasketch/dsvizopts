@@ -104,7 +104,8 @@ dsviz_default_opts <- function(drop_na = NULL,
     orientation = "ver",
     graph_type = "grouped",
     highlight_value = NULL,
-    highlight_value_color = "#50c5b7"
+    highlight_value_color = "#50c5b7",
+    tooltip = NULL
   )
 
   additionalOpts <- list(
