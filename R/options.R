@@ -82,6 +82,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     sort = "no",
     slice_n = NULL,
     order = NULL,
+    order_legend = NULL,
     percentage = FALSE
   )
 
