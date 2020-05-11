@@ -138,8 +138,10 @@ dsviz_default_opts <- function(drop_na = NULL,
     dataLabels_show = FALSE,
     dataLabels_format_sample = NULL,
     dataLabels_size = NULL,
-    dataLabels_color = NULL
+    dataLabels_color = NULL,
+    dataLabels_text_outline = "1px contrast"
   )
+
   titleOpts <- list(
     title = NULL,
     ver_title = NULL,

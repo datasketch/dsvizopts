@@ -175,19 +175,20 @@ default_theme_opts <- function( logo = NULL,
     plot_border_width = 0,
 
     # DATA LABELS STYLE
-    # dataLabels_show = FALSE,
-    # dataLabels_format_sample = NULL,
-    # dataLabels_size = NULL,
-    # dataLabels_color = NULL
-    label_color = "contrast",
-    label_size = 11,
-    label_text_decoration = NULL,
-    label_text_outline = "1px contrast",
+    inner_dataLabels = FALSE,
+
 
     # LEGEND STYLE
-    legend_color = "contrast",
+    legend_show = FALSE,
+    legend_color = "#6D8089",
     legend_family = "Montserrat",
     legend_size = 13,
+    legend_layout = "horizontal",
+    legend_align = 'center',
+    legend_verticalAlign = 'bottom',
+    legend_itemMarginTop = 0,
+    legend_itemMarginBottom = 0,
+    legend_reversed = FALSE,
 
 
     # MAP STYLES
