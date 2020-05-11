@@ -71,6 +71,7 @@ dsviz_default_opts <- function(drop_na = NULL,
 
   preprocessOpts <- list(
     drop_na = FALSE,
+    drop_na_legend = FALSE,
     na_label = "(NA)"
   )
   summarizeOpts <- list(
@@ -89,7 +90,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     color_by = NULL,# which variable?
     format_dat_sample = "Jun 24 2010",
     format_num_sample = "1,500.00",
-    format_cat_sample = "Title case",
+    format_cat_sample = NULL,#"Title case",
     locale = "en-US",
     label_wrap = 12,
     spline = FALSE,
