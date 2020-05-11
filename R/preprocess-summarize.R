@@ -17,7 +17,7 @@ agg <- function(aggregation, ...) {
 preprocessData <- function(d, drop_na = FALSE,
                            na_label = NULL, na_label_cols = NULL){
   if (drop_na){
-    d <- d %>% tidyr::drop_na()
+    d <- d %>% tidyr::drop_na(na_label_cols)
   }else  if (!is.null(na_label)){
     if(is.null(na_label_cols)) stop("need na_label_cols parameter")
     d <- map(names(d), function(col){
