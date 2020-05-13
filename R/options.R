@@ -71,6 +71,7 @@ dsviz_default_opts <- function(drop_na = NULL,
 
   preprocessOpts <- list(
     drop_na = FALSE,
+    drop_na_legend = FALSE,
     na_label = "(NA)"
   )
   summarizeOpts <- list(
@@ -81,6 +82,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     sort = "no",
     slice_n = NULL,
     order = NULL,
+    order_legend = NULL,
     percentage = FALSE
   )
 
@@ -89,7 +91,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     color_by = NULL,# which variable?
     format_dat_sample = "Jun 24 2010",
     format_num_sample = "1,500.00",
-    format_cat_sample = "Title case",
+    format_cat_sample = NULL,#"Title case",
     locale = "en-US",
     label_wrap = 12,
     spline = FALSE,
@@ -104,7 +106,8 @@ dsviz_default_opts <- function(drop_na = NULL,
     orientation = "ver",
     graph_type = "grouped",
     highlight_value = NULL,
-    highlight_value_color = "#50c5b7"
+    highlight_value_color = "#50c5b7",
+    tooltip = NULL
   )
 
   extraOpts <- list(
@@ -137,8 +140,10 @@ dsviz_default_opts <- function(drop_na = NULL,
     dataLabels_show = FALSE,
     dataLabels_format_sample = NULL,
     dataLabels_size = NULL,
-    dataLabels_color = NULL
+    dataLabels_color = NULL,
+    dataLabels_text_outline = "1px contrast"
   )
+
   titleOpts <- list(
     title = NULL,
     ver_title = NULL,
