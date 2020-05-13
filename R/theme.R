@@ -108,6 +108,8 @@ default_theme_opts <- function( logo = NULL,
     logo_position = "right",
 
     palette_colors = datasketch_style()$palette,
+    na_color = "#cbcdcf",
+
     branding_include = FALSE,
     branding_text = "",
     background_color = datasketch_style()$background,
@@ -149,17 +151,20 @@ default_theme_opts <- function( logo = NULL,
     axis_ticks_color = '#DDDDF9',
     axis_tick_length = 10,
 
+    grid_color = "#fafafa",
+    grid_line_type = "solid",
+
     # GRID X
     grid_x_enabled = TRUE,
     grid_x_color =  "#fafafa",
     grid_x_width = 0,
-    grid_y_dash = "dot",
+    grid_x_line_type = "dot",
 
     # GRID Y
     grid_y_enabled = TRUE,
     grid_y_color =  "#DDDDF9",
     grid_y_width = 1,
-    grid_y_dash = "dot",
+    grid_y_line_type = "dot",
 
 
 
