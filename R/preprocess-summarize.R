@@ -20,7 +20,7 @@ preprocessData <- function(d, drop_na = FALSE,
     d <- d %>% tidyr::drop_na(na_label_cols)
   }else  if (!is.null(na_label)){
     if(is.null(na_label_cols)) stop("need na_label_cols parameter")
-    d <- map(names(d), function(col){
+    d <- purrr::map(names(d), function(col){
       if(col %in% na_label_cols){
         if(is.character(d[[col]])) d[[col]][is.na(d[[col]])] <- na_label
         if(is.factor(d[[col]])){
@@ -31,7 +31,7 @@ preprocessData <- function(d, drop_na = FALSE,
         }
       }
       d[[col]]
-    }) %>% set_names(names(d)) %>% as_tibble()
+    }) %>% purrr::set_names(names(d)) %>% tibble::as_tibble()
   }
   d
 }
