@@ -34,15 +34,15 @@ default_theme_opts(
   axis_title_color = NULL,
   axis_title_size = NULL,
   axis_line_color = NULL,
-  axis_line_width = NULL,
+  axis_line_size = NULL,
   axis_ticks_color = NULL,
   axis_tick_length = NULL,
   grid_x_enabled = NULL,
   grid_x_color = NULL,
-  grid_x_width = NULL,
+  grid_x_size = NULL,
   grid_y_enabled = NULL,
   grid_y_color = NULL,
-  grid_y_width = NULL,
+  grid_y_size = NULL,
   grid_y_dash = NULL,
   plot_margin_bottom = NULL,
   plot_margin_top = NULL,
@@ -50,7 +50,7 @@ default_theme_opts(
   plot_margin_right = NULL,
   plot_background_color = NULL,
   plot_border_color = NULL,
-  plot_border_width = NULL,
+  plot_border_size = NULL,
   label_color = NULL,
   label_size = NULL,
   label_text_decoration = NULL,
@@ -116,7 +116,7 @@ default_theme_opts(
 
 \item{axis_line_color}{Axis line color}
 
-\item{axis_line_width}{Axis line width}
+\item{axis_line_size}{Axis line width}
 
 \item{axis_ticks_color}{Axis ticks color}
 
@@ -126,13 +126,13 @@ default_theme_opts(
 
 \item{grid_x_color}{Horizontal grid color}
 
-\item{grid_x_width}{Horizontal grid line width}
+\item{grid_x_size}{Horizontal grid line width}
 
 \item{grid_y_enabled}{Enable vertical grid}
 
 \item{grid_y_color}{Vertical grid color}
 
-\item{grid_y_width}{Verical grid line width}
+\item{grid_y_size}{Verical grid line width}
 
 \item{grid_y_dash}{?}
 
@@ -148,7 +148,7 @@ default_theme_opts(
 
 \item{plot_border_color}{? Chart border color}
 
-\item{plot_border_width}{? Chart border width}
+\item{plot_border_size}{? Chart border width}
 
 \item{label_color}{? Text color}
 
