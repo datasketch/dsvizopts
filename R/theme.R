@@ -30,15 +30,15 @@
 #' @param axis_title_color Color for axis text
 #' @param axis_title_size Axis text size
 #' @param axis_line_color Axis line color
-#' @param axis_line_width Axis line width
+#' @param axis_line_size Axis line width
 #' @param axis_ticks_color Axis ticks color
 #' @param axis_tick_length Axis tick length
 #' @param grid_x_enabled Enable horizontal grid
 #' @param grid_x_color Horizontal grid color
-#' @param grid_x_width Horizontal grid line width
+#' @param grid_x_size Horizontal grid line width
 #' @param grid_y_enabled Enable vertical grid
 #' @param grid_y_color Vertical grid color
-#' @param grid_y_width Verical grid line width
+#' @param grid_y_size Verical grid line width
 #' @param grid_y_dash ?
 #' @param plot_margin_bottom Plot margin bottom
 #' @param plot_margin_top Plot margin top
@@ -46,7 +46,7 @@
 #' @param plot_margin_right Plot margin right
 #' @param plot_background_color ? Chart background color
 #' @param plot_border_color ? Chart border color
-#' @param plot_border_width ? Chart border width
+#' @param plot_border_size ? Chart border width
 #' @param label_color ? Text color
 #' @param label_size ? Text size
 #' @param label_text_decoration ? Text decoration
@@ -81,15 +81,15 @@ default_theme_opts <- function( logo = NULL,
                                 axis_title_color = NULL,
                                 axis_title_size = NULL,
                                 axis_line_color = NULL,
-                                axis_line_width = NULL,
+                                axis_line_size = NULL,
                                 axis_ticks_color = NULL,
                                 axis_tick_length = NULL,
                                 grid_x_enabled = NULL,
                                 grid_x_color = NULL,
-                                grid_x_width = NULL,
+                                grid_x_size = NULL,
                                 grid_y_enabled = NULL,
                                 grid_y_color = NULL,
-                                grid_y_width = NULL,
+                                grid_y_size = NULL,
                                 grid_y_dash = NULL,
                                 plot_margin_bottom = NULL,
                                 plot_margin_top = NULL,
@@ -97,7 +97,7 @@ default_theme_opts <- function( logo = NULL,
                                 plot_margin_right = NULL,
                                 plot_background_color = NULL,
                                 plot_border_color = NULL,
-                                plot_border_width = NULL,
+                                plot_border_size = NULL,
                                 label_color = NULL,
                                 label_size = NULL,
                                 label_text_decoration = NULL,
@@ -146,25 +146,28 @@ default_theme_opts <- function( logo = NULL,
     # GENERAL AXIS
     axis_title_color = '#5A6B72',
     axis_title_size = 13,
-    axis_line_color = '#DDDDF9',
-    axis_line_width = 1,
-    axis_ticks_color = '#DDDDF9',
+    axis_line_color = NULL,
+    axis_line_size = NULL,
+    axis_line_x_size = NULL,
+    axis_line_y_size = NULL,
+    axis_ticks_color = NULL,
     axis_tick_length = 10,
 
     grid_color = "#fafafa",
     grid_line_type = "solid",
+    grid_size = 0.5,
 
     # GRID X
     grid_x_enabled = TRUE,
-    grid_x_color =  "#fafafa",
-    grid_x_width = 0,
-    grid_x_line_type = "dot",
+    grid_x_color =  NULL,
+    grid_x_size = NULL,
+    grid_x_line_type = NULL,
 
     # GRID Y
     grid_y_enabled = TRUE,
-    grid_y_color =  "#DDDDF9",
-    grid_y_width = 1,
-    grid_y_line_type = "dot",
+    grid_y_color =  NULL,
+    grid_y_size = NULL,
+    grid_y_line_type = NULL,
 
 
 
@@ -177,7 +180,7 @@ default_theme_opts <- function( logo = NULL,
     # SPACE INTO AXIS (PLOT AREA)
     plot_background_color = NULL,
     plot_border_color = "#CCCCCC",
-    plot_border_width = 0,
+    plot_border_size = 0,
 
     # DATA LABELS STYLE
     inner_dataLabels = FALSE,
