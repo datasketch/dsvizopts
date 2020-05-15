@@ -149,7 +149,8 @@ dsviz_default_opts <- function(drop_na = NULL,
     ver_title = NULL,
     hor_title = NULL,
     subtitle = NULL,
-    caption = NULL
+    caption = NULL,
+    legend_title = NULL
   )
 
   themeOpts <- list(
