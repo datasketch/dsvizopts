@@ -133,13 +133,23 @@ dsviz_default_opts <- function(drop_na = NULL,
     donut_width = 0.2,
     # Map specific
     map_name = "world_countries",
-    map_color_scale = NULL,
+    map_color_scale = "Numeric",
     map_bins = 5,
+    maps_quantile = 4,
     map_radius = 5,
+    map_min_size = 1,
+    map_max_size = 10,
+    map_stroke = FALSE,
+    map_add_alaska = FALSE,
     map_graticule = FALSE,
     map_graticule_color = '#cccccc',
-    map_graticule_interval = 50,
-    map_graticule_weight = 1
+    map_graticule_interval = 5,
+    map_graticule_weight = 1,
+    map_projection = "mercator",
+    map_projection_lat = NULL,
+    map_projection_long = NULL,
+    map_projection_rotation = NULL,
+    map_projection_params = 45
   )
 
   dataLabelsOpts <- list(

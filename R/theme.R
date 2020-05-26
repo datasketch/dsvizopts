@@ -187,8 +187,8 @@ default_theme_opts <- function( logo = NULL,
 
 
     # LEGEND STYLE
-    legend_show = FALSE,
-    legend_color = "#6D8089",
+    legend_show = TRUE,
+    legend_color = "#444444",
     legend_family = "Montserrat",
     legend_size = 13,
     legend_layout = "horizontal",
@@ -197,14 +197,15 @@ default_theme_opts <- function( logo = NULL,
     legend_itemMarginTop = 0,
     legend_itemMarginBottom = 0,
     legend_reversed = FALSE,
-
+    legend_position = "topright",
 
     # MAP STYLES
     border_weight = 2,
     border_color = "#293845",
-    topo_fill_opacity = 0.3,
+    topo_fill_opacity = 0.8,
     map_tiles = NULL,
     map_zoom = TRUE
+
   )
 }
 
