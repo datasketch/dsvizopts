@@ -111,6 +111,8 @@ dsviz_default_opts <- function(drop_na = NULL,
   )
 
   extraOpts <- list(
+    # Cat-Cat Bars
+    graph_type = "grouped",
     # Scatter specific
     scatter_format_num_sample_x = "1,500.00",
     scatter_format_num_sample_y = "1,500.00",
