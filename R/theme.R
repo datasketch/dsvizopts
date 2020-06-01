@@ -144,7 +144,7 @@ default_theme_opts <- function( logo = NULL,
 
 
     # GENERAL AXIS
-    axis_title_color = '#5A6B72',
+    axis_title_color = NULL,
     axis_title_size = 13,
     axis_line_color = NULL,
     axis_line_size = NULL,
@@ -188,7 +188,7 @@ default_theme_opts <- function( logo = NULL,
 
     # LEGEND STYLE
     legend_show = TRUE,
-    legend_color = "#444444",
+    legend_color = NULL,
     legend_family = "Montserrat",
     legend_size = 11,
     legend_layout = "horizontal",
