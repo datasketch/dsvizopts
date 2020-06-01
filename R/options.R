@@ -107,7 +107,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     graph_type = "grouped",
     highlight_value = NULL,
     highlight_value_color = "#50c5b7",
-    tooltip = NULL
+    tooltip = ""
   )
 
   extraOpts <- list(
@@ -157,7 +157,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     dataLabels_format_sample = NULL,
     dataLabels_size = NULL,
     dataLabels_color = NULL,
-    dataLabels_text_outline = "1px contrast"
+    dataLabels_text_outline = TRUE
   )
 
   titleOpts <- list(

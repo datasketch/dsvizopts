@@ -153,7 +153,7 @@ default_theme_opts <- function( logo = NULL,
     axis_ticks_color = NULL,
     axis_tick_length = 10,
 
-    grid_color = "#fafafa",
+    grid_color = "#CCCCCC",
     grid_line_type = "solid",
     grid_size = 0.5,
 
@@ -162,13 +162,13 @@ default_theme_opts <- function( logo = NULL,
     grid_x_color =  NULL,
     grid_x_size = NULL,
     grid_x_line_type = NULL,
-
+    grid_x_width = 1,
     # GRID Y
     grid_y_enabled = TRUE,
     grid_y_color =  NULL,
     grid_y_size = NULL,
     grid_y_line_type = NULL,
-
+    grid_y_width  = 1,
 
 
     # SPACE THAT COVERS ALL THE GRAPHIC
@@ -190,7 +190,7 @@ default_theme_opts <- function( logo = NULL,
     legend_show = TRUE,
     legend_color = "#444444",
     legend_family = "Montserrat",
-    legend_size = 13,
+    legend_size = 11,
     legend_layout = "horizontal",
     legend_align = 'center',
     legend_verticalAlign = 'bottom',
