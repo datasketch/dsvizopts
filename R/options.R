@@ -110,6 +110,14 @@ dsviz_default_opts <- function(drop_na = NULL,
     tooltip = ""
   )
 
+  shinyOpts <- list(
+    allow_point = FALSE,
+    color_click = NULL,
+    color_hover = NULL,
+    cursor =  NULL,
+    clickFunction = NULL
+  )
+
   extraOpts <- list(
     # Cat-Cat Bars
     graph_type = "grouped",
@@ -151,7 +159,8 @@ dsviz_default_opts <- function(drop_na = NULL,
     map_projection_lat = NULL,
     map_projection_long = NULL,
     map_projection_rotation = NULL,
-    map_projection_params = 45
+    map_projection_params = 45,
+    map_min_zoom = 1
   )
 
   dataLabelsOpts <- list(
@@ -185,7 +194,8 @@ dsviz_default_opts <- function(drop_na = NULL,
     title = titleOpts,
     dataLabels = dataLabelsOpts,
     extra = extraOpts,
-    theme = themeOpts
+    theme = themeOpts,
+    shiny = shinyOpts
   )
 }
 #' @export
@@ -214,6 +224,7 @@ merge_dsviz_options <- function(...){
     title = pull_opt_group(opts_flat, "title"),
     dataLabels = pull_opt_group(opts_flat, "dataLabels"),
     extra = pull_opt_group(opts_flat, "extra"),
+    shiny = pull_opt_group(opts_flat, "shiny"),
     theme = theme
   )
 }
