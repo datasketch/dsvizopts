@@ -132,6 +132,8 @@ dsviz_default_opts <- function(drop_na = NULL,
     scatter_regression = FALSE,
     scatter_regression_color = '#d35400',
     scatter_regression_equation = TRUE,
+
+    date_intervals = NULL,
     # Bubbles specific
     bubble_min = 30,
     bubble_max = 120,
