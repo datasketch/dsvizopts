@@ -2,13 +2,10 @@
 #'@export
 postprocess <- function(d, col, sort, slice_n = NULL) {
   if (sort == "asc") {
-    d <- d %>%
-      dplyr::arrange_(col)
+    d <- d[order(d[col]),]
   }
   if (sort == "desc") {
-    col <- paste0('desc(', col, ')')
-    d <- d %>%
-      dplyr::arrange_(.dots = col)
+    d <- d[order(-d[col]),]
   }
   if (!is.null(slice_n)) {
     d <- d %>%
