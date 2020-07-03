@@ -83,7 +83,8 @@ dsviz_default_opts <- function(drop_na = NULL,
     slice_n = NULL,
     order = NULL,
     order_legend = NULL,
-    percentage = FALSE
+    percentage = FALSE,
+    percentage_col = NULL
   )
 
   styleOpts <- list(
