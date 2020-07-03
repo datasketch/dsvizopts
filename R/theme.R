@@ -106,6 +106,8 @@ default_theme_opts <- function( logo = NULL,
   list(
     logo = "datasketch",
     logo_position = "right",
+    logo_width = 180,
+    logo_height = 60,
 
     palette_colors = datasketch_style()$palette,
     na_color = "#cbcdcf",
@@ -114,6 +116,7 @@ default_theme_opts <- function( logo = NULL,
     branding_text = "",
     background_color = datasketch_style()$background,
     branding_background_color = "",
+
     accent_color = "#d2a045",
 
     # GENERAL STYLES
