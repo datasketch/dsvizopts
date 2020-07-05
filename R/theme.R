@@ -188,7 +188,10 @@ default_theme_opts <- function( logo = NULL,
     # DATA LABELS STYLE
     inner_dataLabels = FALSE,
 
-
+    #BAR
+    bar_pointWidth = NULL,
+    bar_padding = 0,
+    bar_groupWidth = 0.1,
     # LEGEND STYLE
     legend_show = TRUE,
     legend_color = NULL,
@@ -201,7 +204,7 @@ default_theme_opts <- function( logo = NULL,
     legend_itemMarginBottom = 0,
     legend_reversed = FALSE,
     legend_position = "topright",
-
+    legend_y_position = 0,
     # MAP STYLES
     border_weight = 2,
     border_color = "#293845",
