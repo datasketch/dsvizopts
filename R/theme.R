@@ -106,8 +106,8 @@ default_theme_opts <- function( logo = NULL,
   list(
     logo = "datasketch",
     logo_position = "right",
-    logo_width = 180,
-    logo_height = 60,
+    logo_width = 150,
+    logo_height = 30,
     logo_x_position = 350,
 
 
@@ -207,6 +207,10 @@ default_theme_opts <- function( logo = NULL,
     legend_reversed = FALSE,
     legend_position = "topright",
     legend_y_position = 0,
+
+    # Tooltip
+    tooltip_family = NULL,
+
     # MAP STYLES
     border_weight = 2,
     border_color = "#293845",
