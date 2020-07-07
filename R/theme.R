@@ -108,6 +108,8 @@ default_theme_opts <- function( logo = NULL,
     logo_position = "right",
     logo_width = 180,
     logo_height = 60,
+    logo_x_position = 350,
+
 
     palette_colors = datasketch_style()$palette,
     na_color = "#cbcdcf",
@@ -142,7 +144,7 @@ default_theme_opts <- function( logo = NULL,
 
     # caption = "", # Needed to update chart caption when logo defined
     caption_color = "#AAAAAA",
-    caption_align = "right", # left - center - right
+    caption_align = "left", # left - center - right
     caption_size = 17,
 
 
