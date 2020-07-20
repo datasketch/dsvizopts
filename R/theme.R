@@ -106,8 +106,8 @@ default_theme_opts <- function( logo = NULL,
   list(
     logo = "datasketch",
     logo_position = "right",
-    logo_width = 150,
-    logo_height = 30,
+    logo_width = 180,
+    logo_height = 60,
     logo_x_position = 350,
 
 
@@ -122,28 +122,28 @@ default_theme_opts <- function( logo = NULL,
     accent_color = "#d2a045",
 
     # GENERAL STYLES
-    text_size = 11,
-    text_color = "#6D8089",
-    text_family = "Ubuntu",
-    line_color = "#DDDDF9",
-    line_size = 1,
+    text_size = 12,
+    text_color = "#293845",
+    text_family = "IBM Plex Sans",
+    line_color = "#bec7d0",
+    line_size = 0.5,
 
     # TITLE STYLES
-    title_color = "#444444",
+    title_color = "#293845",
     title_align = "left", # left - center - right
-    title_family = "Montserrat",
+    title_family = "IBM Plex Sans",
     title_size = 21,
     title_weight = 700, # too, with ligh, bold...
 
     # SUBTITILES STYLES
-    subtitle_color = "#999999",
+    subtitle_color = "#293845",
     subtitle_align = "left", # left - center - right
     subtitle_size = 17,
     subtitle_weight = 700,
 
 
     # caption = "", # Needed to update chart caption when logo defined
-    caption_color = "#AAAAAA",
+    caption_color = "#293845",
     caption_align = "left", # left - center - right
     caption_size = 17,
 
@@ -151,7 +151,7 @@ default_theme_opts <- function( logo = NULL,
     # GENERAL AXIS
     axis_title_color = NULL,
     axis_title_size = 13,
-    axis_line_color = NULL,
+    axis_line_color = "#8395a6",
     axis_line_size = NULL,
     axis_line_x_size = NULL,
     axis_line_y_size = NULL,
@@ -160,17 +160,17 @@ default_theme_opts <- function( logo = NULL,
 
     grid_color = "#CCCCCC",
     grid_line_type = "solid",
-    grid_size = 0.5,
+    grid_size = 0.3,
 
     # GRID X
     grid_x_enabled = TRUE,
-    grid_x_color =  NULL,
+    grid_x_color =  "#bec7d0",
     grid_x_size = NULL,
     grid_x_line_type = NULL,
     grid_x_width = 1,
     # GRID Y
     grid_y_enabled = TRUE,
-    grid_y_color =  NULL,
+    grid_y_color =  "#bec7d0",
     grid_y_size = NULL,
     grid_y_line_type = NULL,
     grid_y_width  = 1,
@@ -197,7 +197,7 @@ default_theme_opts <- function( logo = NULL,
     # LEGEND STYLE
     legend_show = TRUE,
     legend_color = NULL,
-    legend_family = "Montserrat",
+    legend_family = "IBM Plex Sans",
     legend_size = 11,
     legend_layout = "horizontal",
     legend_align = 'center',
@@ -205,7 +205,7 @@ default_theme_opts <- function( logo = NULL,
     legend_itemMarginTop = 0,
     legend_itemMarginBottom = 0,
     legend_reversed = FALSE,
-    legend_position = "topright",
+    legend_position = NULL,
     legend_y_position = 0,
 
     # Tooltip
