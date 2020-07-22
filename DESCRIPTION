@@ -17,6 +17,7 @@ Suggests:
     dplyr,
     tidyr,
     purrr,
+    dsthemer,
     rmarkdown
 Imports: 
     dplyr

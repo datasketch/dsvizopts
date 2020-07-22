@@ -226,11 +226,11 @@ default_theme_opts <- function( logo = NULL,
 #' @export
 local_logo_path <- function(logo = NULL, background = "#ffffff"){
   if(is.null(logo)) return()
-  if(logo == "datasketch"){
-    logo_path <- system.file("logo",package = "dsvizopts")
+  #if(logo == "datasketch"){
+    logo_path <- system.file("logos",package = "dsthemer")
     light_dark <- paletero::which_contrast(background)
-    logo <- file.path(logo_path,paste0("ds-logo-",light_dark,".png"))
-  }
+    logo <- file.path(logo_path,paste0(logo,light_dark,".png"))
+  #}
   logo
 }
 
