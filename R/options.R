@@ -135,6 +135,9 @@ dsviz_default_opts <- function(drop_na = NULL,
     scatter_regression_equation = TRUE,
 
     date_intervals = NULL,
+
+    # Area specific
+    area_alpha = 0.5,
     # Bubbles specific
     bubble_min = 30,
     bubble_max = 120,
@@ -195,8 +198,8 @@ dsviz_default_opts <- function(drop_na = NULL,
     title = titleOpts,
     dataLabels = dataLabelsOpts,
     extra = extraOpts,
-    theme = themeOpts,
-    shiny = shinyOpts
+    shiny = shinyOpts,
+    theme = themeOpts
   )
 }
 #' @export
