@@ -117,7 +117,7 @@ default_theme_opts <- function( logo = NULL,
     branding_include = FALSE,
     branding_text = "",
     background_color = datasketch_style()$background,
-    branding_background_color = "",
+    branding_background_color = "transparent",
 
     accent_color = "#d2a045",
 
@@ -229,7 +229,7 @@ local_logo_path <- function(logo = NULL, background = "#ffffff"){
   #if(logo == "datasketch"){
     logo_path <- system.file("logos",package = "dsthemer")
     light_dark <- paletero::which_contrast(background)
-    logo <- file.path(logo_path,paste0(logo,light_dark,".png"))
+    logo <- file.path(logo_path,paste0(logo, "/",light_dark,".png"))
   #}
   logo
 }
