@@ -104,7 +104,7 @@ default_theme_opts <- function( logo = NULL,
                                 label_text_outline = NULL){
 
   list(
-    logo = "datasketch",
+    logo = "public",
     logo_position = "right",
     logo_width = 180,
     logo_height = 60,
@@ -117,33 +117,33 @@ default_theme_opts <- function( logo = NULL,
     branding_include = FALSE,
     branding_text = "",
     background_color = datasketch_style()$background,
-    branding_background_color = "transparent",
+    branding_background_color = "",
 
     accent_color = "#d2a045",
 
     # GENERAL STYLES
     text_size = 12,
-    text_color = "#293845",
+    text_color = "#28333f",
     text_family = "IBM Plex Sans",
     line_color = "#bec7d0",
     line_size = 0.5,
 
     # TITLE STYLES
-    title_color = "#293845",
+    title_color = "#28333f",
     title_align = "left", # left - center - right
     title_family = "IBM Plex Sans",
     title_size = 21,
     title_weight = 700, # too, with ligh, bold...
 
     # SUBTITILES STYLES
-    subtitle_color = "#293845",
+    subtitle_color = "#28333f",
     subtitle_align = "left", # left - center - right
     subtitle_size = 17,
     subtitle_weight = 700,
 
 
     # caption = "", # Needed to update chart caption when logo defined
-    caption_color = "#293845",
+    caption_color = "#28333f",
     caption_align = "left", # left - center - right
     caption_size = 17,
 
@@ -151,26 +151,26 @@ default_theme_opts <- function( logo = NULL,
     # GENERAL AXIS
     axis_title_color = NULL,
     axis_title_size = 13,
-    axis_line_color = "#8395a6",
+    axis_line_color = "#7e858c",
     axis_line_size = NULL,
     axis_line_x_size = NULL,
     axis_line_y_size = NULL,
     axis_ticks_color = NULL,
     axis_tick_length = 10,
 
-    grid_color = "#CCCCCC",
-    grid_line_type = "solid",
+    grid_color = "#d1d9db",
+    grid_line_type = "Solid",
     grid_size = 0.3,
 
     # GRID X
     grid_x_enabled = TRUE,
-    grid_x_color =  "#bec7d0",
+    grid_x_color =  "#d1d9db",
     grid_x_size = NULL,
     grid_x_line_type = NULL,
     grid_x_width = 1,
     # GRID Y
     grid_y_enabled = TRUE,
-    grid_y_color =  "#bec7d0",
+    grid_y_color =  "#d1d9db",
     grid_y_size = NULL,
     grid_y_line_type = NULL,
     grid_y_width  = 1,
@@ -184,7 +184,7 @@ default_theme_opts <- function( logo = NULL,
 
     # SPACE INTO AXIS (PLOT AREA)
     plot_background_color = NULL,
-    plot_border_color = "#CCCCCC",
+    plot_border_color = "#d1d9db",
     plot_border_size = 0,
 
     # DATA LABELS STYLE
@@ -213,7 +213,7 @@ default_theme_opts <- function( logo = NULL,
 
     # MAP STYLES
     border_weight = 2,
-    border_color = "#293845",
+    border_color = "#28333f",
     topo_fill_opacity = 0.8,
     map_tiles = NULL,
     map_zoom = TRUE
@@ -229,7 +229,7 @@ local_logo_path <- function(logo = NULL, background = "#ffffff"){
   #if(logo == "datasketch"){
     logo_path <- system.file("logos",package = "dsthemer")
     light_dark <- paletero::which_contrast(background)
-    logo <- file.path(logo_path,paste0(logo, "/",light_dark,".png"))
+    logo <- file.path(logo_path,paste0(logo,light_dark,".png"))
   #}
   logo
 }
