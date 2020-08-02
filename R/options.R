@@ -90,7 +90,8 @@ dsviz_default_opts <- function(drop_na = NULL,
   styleOpts <- list(
     axis_text_angle = NA,
     color_by = NULL,# which variable?
-    format_dat_sample = "Jun 24 2010",
+    format_dat = NULL,
+    format_dat_sample = NULL,
     format_num_sample = "1,500.00",
     format_cat_sample = NULL,#"Title case",
     locale = "en-US",
