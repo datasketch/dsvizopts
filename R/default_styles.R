@@ -1,11 +1,11 @@
 
 datasketch_style <- function(){
   list(
-    palette = c("#e334a9", "#3d2e79", "#c68df8",
-                "#59e1da", "#ff931a", "#ffe564",
-                "#8ad050"),
+    palette = c("#385573", "#ffa92a", "#f06142",
+                "#99e8b3", "#32a8ce", "#996295",
+                "#e59fd7"),
     background = "#fafafa",
-    na = "bec7d0"
+    na = "#d1d9db"
   )
 }
 
