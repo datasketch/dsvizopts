@@ -14,9 +14,10 @@ dsviz_default_opts(
   order = NULL,
   axis_text_angle = NULL,
   color_by = NULL,
-  format_dat_sample = NULL,
-  format_num_sample = NULL,
-  format_cat_sample = NULL,
+  format_dat = NULL,
+  format_sample_dat = NULL,
+  format_sample_num = NULL,
+  format_sample_cat = NULL,
   locale = NULL,
   label_wrap = NULL,
   spline = NULL,
@@ -55,12 +56,6 @@ dsviz_default_opts(
 
 \item{color_by}{Column to map colors}
 
-\item{format_dat_sample}{Sample format for dates, e.g. "28/04/2020" or "February 28th 2020"}
-
-\item{format_num_sample}{Sample format for numbers, e.g. "1,234.56" or "1'234.5678"}
-
-\item{format_cat_sample}{Sample format for categories, e.g. "TITTLE", "lowercase", "Title Case"}
-
 \item{locale}{Locale to use, e.g. "en-US"}
 
 \item{label_wrap}{Number of characters to wrap long tick titles}
@@ -90,6 +85,12 @@ dsviz_default_opts(
 \item{caption}{Caption}
 
 \item{opts}{All of the previous options can be passed as list of options opts}
+
+\item{format_dat_sample}{Sample format for dates, e.g. "28/04/2020" or "February 28th 2020"}
+
+\item{format_num_sample}{Sample format for numbers, e.g. "1,234.56" or "1'234.5678"}
+
+\item{format_cat_sample}{Sample format for categories, e.g. "TITTLE", "lowercase", "Title Case"}
 
 \item{dataLabels_show}{Show data labels}
 
