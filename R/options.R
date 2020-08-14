@@ -137,7 +137,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     scatter_regression_equation = TRUE,
 
     date_intervals = NULL,
-
+    animation_duration = 0,
     # Area specific
     area_alpha = 0.5,
     # Bubbles specific
