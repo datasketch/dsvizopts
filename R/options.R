@@ -165,7 +165,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     map_projection = "mercator",
     map_projection_lat = 90,
     map_projection_long = 0,
-    map_projection_rotation = NULL,
+    map_projection_rotation = 0,
     map_projection_params = 45,
     map_min_zoom = 1
   )
