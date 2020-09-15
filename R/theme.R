@@ -106,8 +106,8 @@ default_theme_opts <- function( logo = NULL,
   list(
     logo = "public",
     logo_position = "right",
-    logo_width = 180,
-    logo_height = 30,
+    logo_width = 150,
+    logo_height = 50,
     logo_x_position = 350,
 
 
