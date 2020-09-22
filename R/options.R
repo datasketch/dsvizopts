@@ -173,6 +173,7 @@ dsviz_default_opts <- function(drop_na = NULL,
   dataLabelsOpts <- list(
     dataLabels_show = FALSE,
     dataLabels_format_sample = NULL,
+    dataLabels_type = NULL,
     dataLabels_size = NULL,
     dataLabels_color = NULL,
     dataLabels_text_outline = TRUE
