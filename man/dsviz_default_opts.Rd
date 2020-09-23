@@ -96,6 +96,8 @@ dsviz_default_opts(
 
 \item{dataLabels_format_sample}{Format for data labels}
 
+\item{dataLabels_type}{Type of data labels: "percentage" or "total"}
+
 \item{dataLabels_size}{Data labels size}
 
 \item{dataLabels_color}{Data labels color}
