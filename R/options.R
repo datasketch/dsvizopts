@@ -100,8 +100,8 @@ dsviz_default_opts <- function(drop_na = NULL,
     spline = FALSE,
     prefix = "",
     suffix = "",
-    label_wrap_legend = 12
-    # label_ratio = 1,
+    label_wrap_legend = 12,
+    label_ratio = 1#,
     # highlight_value = NULL,
     # highlight_value_color = '#F9B233',
   )

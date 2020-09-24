@@ -145,7 +145,7 @@ default_theme_opts <- function( logo = NULL,
     # caption = "", # Needed to update chart caption when logo defined
     caption_color = "#28333f",
     caption_align = "left", # left - center - right
-    caption_size = 17,
+    caption_size = 12,
 
 
     # GENERAL AXIS
