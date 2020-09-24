@@ -25,6 +25,7 @@
 #' @param bubble_max Relative max size of bubbles in chart
 #' @param dataLabels_show Show data labels
 #' @param dataLabels_format_sample Format for data labels
+#' @param dataLabels_type Type of data labels: "percentage" or "total"
 #' @param dataLabels_size Data labels size
 #' @param dataLabels_color Data labels color
 #' @param title Chart title
@@ -173,6 +174,7 @@ dsviz_default_opts <- function(drop_na = NULL,
   dataLabelsOpts <- list(
     dataLabels_show = FALSE,
     dataLabels_format_sample = NULL,
+    dataLabels_type = NULL,
     dataLabels_size = NULL,
     dataLabels_color = NULL,
     dataLabels_text_outline = TRUE

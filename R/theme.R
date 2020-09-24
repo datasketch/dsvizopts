@@ -112,6 +112,8 @@ default_theme_opts <- function( logo = NULL,
 
 
     palette_colors = datasketch_style()$palette,
+    palette_colors_sequential = datasketch_style()$sequential,
+    palette_colors_divergent = datasketch_style()$divergent,
     na_color = "#cbcdcf",
 
     branding_include = FALSE,
