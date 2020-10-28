@@ -153,6 +153,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     # Map specific
     map_name = "world_countries",
     map_color_scale = "Numeric",
+    map_label_by = "name",
     map_bins = 5,
     map_quantile = 4,
     map_cutoff_points = NULL,
