@@ -4,6 +4,10 @@
 #' @param logo Logo path or url
 #' @param logo_position Logo "left" or "right"
 #' @param palette_colors Vector of colors
+#' @param palette_colors_categorical Vector of colors suitable for categorical variable
+#' @param palette_colors_sequential Vector of sequential colors suitable for numerical variable
+#' @param palette_colors_divergent Vector of divergent colors suitable for numerical variable
+#' @param palette_type Type of color palette "categorical", "sequential", or "divergent"
 #' @param branding_include Include branding logical
 #' @param branding_text Text for branding bar
 #' @param background_color Plot background color
@@ -55,6 +59,10 @@
 default_theme_opts <- function( logo = NULL,
                                 logo_position = NULL,
                                 palette_colors = NULL,
+                                palette_colors_categorical = NULL,
+                                palette_colors_sequential = NULL,
+                                palette_colors_divergent = NULL,
+                                palette_type = NULL,
                                 branding_include = NULL,
                                 branding_text = NULL,
                                 background_color = NULL,
@@ -111,7 +119,9 @@ default_theme_opts <- function( logo = NULL,
     logo_x_position = 350,
 
 
-    palette_colors = datasketch_style()$palette,
+    palette_colors = NULL,
+    palette_type = NULL,
+    palette_colors_categorical = datasketch_style()$palette,
     palette_colors_sequential = datasketch_style()$sequential,
     palette_colors_divergent = datasketch_style()$divergent,
     na_color = "#cbcdcf",
@@ -229,9 +239,9 @@ default_theme_opts <- function( logo = NULL,
 local_logo_path <- function(logo = NULL, background = "#ffffff"){
   if(is.null(logo)) return()
   #if(logo == "datasketch"){
-    logo_path <- system.file("logos",package = "dsthemer")
-    light_dark <- paletero::which_contrast(background)
-    logo <- file.path(logo_path,paste0(logo, "/",light_dark,".png"))
+  logo_path <- system.file("logos",package = "dsthemer")
+  light_dark <- paletero::which_contrast(background)
+  logo <- file.path(logo_path,paste0(logo, "/",light_dark,".png"))
   #}
   logo
 }
