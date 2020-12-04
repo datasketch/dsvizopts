@@ -29,6 +29,7 @@ dsviz_default_opts(
   bubble_max = NULL,
   data_labels_show = NULL,
   data_labels_format_sample = NULL,
+  map_bins_pretty = NULL,
   title = NULL,
   ver_title = NULL,
   hor_title = NULL,

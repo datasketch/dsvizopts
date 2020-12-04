@@ -171,7 +171,10 @@ dsviz_default_opts <- function(drop_na = NULL,
     map_projection_long = 0,
     map_projection_rotation = 0,
     map_projection_params = 45,
-    map_min_zoom = 1
+    map_min_zoom = 1,
+
+    #treemap
+    treemap_layout = "squarified" # one of: stripes, squarified, strip, slice and dice (NULL)
   )
 
   dataLabelsOpts <- list(
