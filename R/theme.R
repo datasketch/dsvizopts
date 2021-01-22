@@ -109,7 +109,8 @@ default_theme_opts <- function( logo = NULL,
                                 label_color = NULL,
                                 label_size = NULL,
                                 label_text_decoration = NULL,
-                                label_text_outline = NULL){
+                                label_text_outline = NULL,
+                                marker_enabled = TRUE){
 
   list(
     logo = "public",
@@ -228,7 +229,10 @@ default_theme_opts <- function( logo = NULL,
     border_color = "#28333f",
     topo_fill_opacity = 0.8,
     map_tiles = NULL,
-    map_zoom = TRUE
+    map_zoom = TRUE,
+
+    # Lines and areas
+    marker_enabled = TRUE
 
   )
 }

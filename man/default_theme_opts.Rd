@@ -8,6 +8,10 @@ default_theme_opts(
   logo = NULL,
   logo_position = NULL,
   palette_colors = NULL,
+  palette_colors_categorical = NULL,
+  palette_colors_sequential = NULL,
+  palette_colors_divergent = NULL,
+  palette_type = NULL,
   branding_include = NULL,
   branding_text = NULL,
   background_color = NULL,
@@ -54,7 +58,8 @@ default_theme_opts(
   label_color = NULL,
   label_size = NULL,
   label_text_decoration = NULL,
-  label_text_outline = NULL
+  label_text_outline = NULL,
+  marker_enabled = TRUE
 )
 }
 \arguments{
@@ -63,6 +68,14 @@ default_theme_opts(
 \item{logo_position}{Logo "left" or "right"}
 
 \item{palette_colors}{Vector of colors}
+
+\item{palette_colors_categorical}{Vector of colors suitable for categorical variable}
+
+\item{palette_colors_sequential}{Vector of sequential colors suitable for numerical variable}
+
+\item{palette_colors_divergent}{Vector of divergent colors suitable for numerical variable}
+
+\item{palette_type}{Type of color palette "categorical", "sequential", or "divergent"}
 
 \item{branding_include}{Include branding logical}
 
