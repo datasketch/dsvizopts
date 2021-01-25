@@ -232,7 +232,8 @@ default_theme_opts <- function( logo = NULL,
     map_zoom = TRUE,
 
     # Lines and areas
-    marker_enabled = TRUE
+    marker_enabled = TRUE,
+    connect_lines_nulls = FALSE
 
   )
 }
