@@ -233,6 +233,7 @@ default_theme_opts <- function( logo = NULL,
 
     # Lines and areas
     marker_enabled = TRUE,
+    marker_radius = 4,
     connect_lines_nulls = FALSE
 
   )
