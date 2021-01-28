@@ -234,7 +234,13 @@ default_theme_opts <- function( logo = NULL,
     # Lines and areas
     marker_enabled = TRUE,
     marker_radius = 4,
-    connect_lines_nulls = FALSE
+    connect_lines_nulls = FALSE,
+
+    # plot lines
+    plotLine_value_x = NULL,
+    plotLine_value_y = NULL,
+    plotLine_label_x = NULL,
+    plotLine_label_y = NULL
 
   )
 }
