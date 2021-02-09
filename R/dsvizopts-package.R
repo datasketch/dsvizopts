@@ -7,3 +7,24 @@
 ## usethis namespace: end
 NULL
 
+
+
+#' Palette type options
+#'
+#' @description
+#' This page describes the characteristics of the color palettes available by default
+#'
+#' @param categorical Palette that assigns a color to each category without a particular order.
+#'  When choosing categorical palettes it is important that the colors do not convey a certain order or hierarchy of
+#'  the categories and that the colors are clearly distinguishable from each other.
+#' @param sequential Palette that assigns sequential colors to numerical values. This type of palette is recommended
+#'  for numerical values (such as economic or population indices) or ordered categories
+#'  (such as years or days of the week) to convey the importance of minimum and maximum values.
+#' @param divergent Palette that assigns divergent colors to numerical values. This type of palette contains
+#'  a color scale with two different colors at each end and a third color in the middle to express neutrality. Recommended for continuous
+#'  variables with a central reference value around which the more extreme values of the data are compared (such as satisfaction levels in a survey).
+#'  The colors assigned to the extremes of the data should highlight the respective difference to the reference value, which is assigned a neutral
+#'  color between the two more striking colors assigned to the extremes.
+#' @keywords internal
+#' @name dsvizopts_palette_type
+NULL

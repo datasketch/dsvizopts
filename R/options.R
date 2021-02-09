@@ -1,76 +1,71 @@
 
 #' Chart Options
 #'
-#' @name dsviz_default_opts
-#' @param drop_na drop NA values from input data
-#' @param na_label replace NA values with string
-#' @param agg Aggregation function for groups, defaults to sum
-#' @param agg_text When there is aggegregaton agg_text is prepended to grouped variable
-#' @param sort Whether to sort the data column: asc or desc
-#' @param slice_n Slide the data from 1 to n
-#' @param order Give the order of the categories
-#' @param axis_text_angle Rotate axis ticks test
-#' @param color_by Column to map colors
-#' @param format_dat_sample  Sample format for dates, e.g. "28/04/2020" or "February 28th 2020"
-#' @param format_num_sample Sample format for numbers, e.g. "1,234.56" or "1'234.5678"
-#' @param format_cat_sample Sample format for categories, e.g. "TITTLE", "lowercase", "Title Case"
-#' @param locale Locale to use, e.g. "en-US"
-#' @param label_wrap Number of characters to wrap long tick titles
-#' @param spline Spline TRUE or FALSE for line charts (html only)
-#' @param prefix Add preffix to values
-#' @param suffix Add suffix to values
-#' @param label_wrap_legend Wrap the legend string the given number of characters
-#' @param orientation Chart orientation: horizonal ("hor") or verical ("ver")
-#' @param bubble_min Relative min size of bubbles in chart
-#' @param bubble_max Relative max size of bubbles in chart
-#' @param dataLabels_show Show data labels
-#' @param dataLabels_format_sample Format for data labels
-#' @param dataLabels_type Type of data labels: "percentage" or "total"
-#' @param dataLabels_size Data labels size
-#' @param dataLabels_color Data labels color
-#' @param title Chart title
-#' @param ver_title Vertical axis title
-#' @param hor_title Horizontal axis titble
-#' @param subtitle Subtitle
-#' @param caption Caption
-#' @param opts All of the previous options can be passed as list of options opts
+#' @description
+#' This page describes the chart options arguments
 #' @export
-dsviz_default_opts <- function(drop_na = NULL,
-                               na_label = NULL,
-                               agg = NULL,
-                               agg_text = NULL,
-                               sort = NULL,
-                               slice_n = NULL,
-                               order = NULL,
-                               axis_text_angle = NULL,
-                               color_by = NULL,
-                               format_dat = NULL,
-                               format_sample_dat = NULL,
-                               format_sample_num = NULL,
-                               format_sample_cat = NULL,
-                               locale = NULL,
-                               label_wrap = NULL,
-                               spline = NULL,
-                               prefix = NULL,
-                               suffix = NULL,
-                               label_wrap_legend = NULL,
-                               orientation = NULL,
-                               bubble_min = NULL,
-                               bubble_max = NULL,
-                               data_labels_show = NULL,
-                               data_labels_format_sample = NULL,
-                               map_bins_pretty = NULL,
-                               title = NULL,
-                               ver_title = NULL,
-                               hor_title = NULL,
-                               subtitle = NULL,
-                               caption = NULL,
-                               opts = NULL){
+#' @param title String with the main title (on top). Default is NULL
+#' @param subtitle String for subtitle (below the title). Default is NULL
+#' @param caption String for caption (bottom). Default is NULL
+#' @param hor_title String. The main title (on top). Default is NULL
+#' @param ver_title String. The main title (on top). Default is NULL
+#' @param legend_title String. The main title (on top). Default is NULL
+#' @param palette_colors An optional character vector specifying the colors
+#' @param palette_type  String with type of color palette (optional). You can choose into
+#'  "categorical", "sequential" and "divergent" palettes, more info in  <[`palette-types`][dsvizopts_palette_type]>
+#' @param color_by A character with the name of the variable by which you want to color the graph. Default is NULL
+#' @param drop_na Boolean. If TRUE drop missing values
+#' @param na_label String with label that should be used to recode missing values. Default is "(NA)"
+#' @param drop_na_legend Boolean. If TRUE drop missing values in legend
+#' @param agg Compute summary statistics of data, the default aggregation is "sum" but "mean" and "median" are available
+#' @param agg_text When there is aggregation agg_text is prepended to grouped variable
+#' @param sort String. Order the bars by the values of the graphed category. Options: "without", "desc" (sort a variable in descending order), "asc" (sort a variable in ascending order). Default is "without.
+#' @param slice_n Numeric value, It allows you to select and remove unique rows
+#' @param order A character vector of variables to sort categories on the axes in the respective order.
+#' @param order_legend A character vector of variables to sort categories on the legend in the respective order.
+#' @param percentage Boolean. If TRUE, calculates the percentage according to the variable chosen in "percetage_col", by default it chooses the first column of the entered dataframe.
+#' @param percentage_col A character with the name of the variable for which you want the percentage to be calculated.
+#' @param format_sample_cat A specifier to format categories, e.g. "TITTLE", "lowercase", "Title Case"
+#' @param format_sample_num A specifier to format numerical value(s), e.g. "1,234.56" or "1'234.5678"
+#' @param format_sample_dat A specifier to format date(s), e.g. "28/04/2020" or "February 28th 2020"
+#' @param locale Locale to use, e.g. "fr-FR" for french.
+#' @param label_wrap A numeric vector of length one to choose the number of characters of the label text (overflowing text will be placed in a new line below).
+#' @param label_wrap_legend A numeric vector of length one to choose the number of characters in each line of text in the legend (overflowing text will be placed in a new line below.)
+#' @param spline Boolean. If TRUE, the segments between the data points are smoothed.
+#' @param suffix Character string to append before formatted value.
+#' @param prefix Character string to append after formatted value.
+#' @param orientation A character vector of length one, where the chart can be displayed vertically ("ver") or horizontally ("hor").
+#' @param graph_type A character vector of length one with graph type. Options: "grouped" (show individual values) or "stacked" (stack the values of each series on top of each other). Default is "grouped".
+#' @param highlight_value A character vector with the categories you want to highlight. Default is NULL
+#' @param highlight_value_color A character vector of length one with the color to highlight categories select in highlight_value
+#' @param tooltip HTML with information that appears when hovering your pointer over the graph. Variables are enclosed by curly brackets.
+#' @param allow_point Boolean. If TRUE, allow this series' points to be selected by clicking on the graphic. Default is FALSE.
+#' @param color_click String with color to change the color of the series that was clicked.
+#' @param color_hover String with color to change the color of the series over which the mouse hovered.
+#' @param cursor You can set the cursor to "pointer" if you have click events attached to the series, to signal to the user that the points and lines can be clicked.
+#' @param clickFunction String with JS function to indicate the values to be captured when clicking on the chart.
+#' @param dataLabels_show Boolean. If TRUE it shows the values of the chart labels
+#' @param dataLabels_format_sample String. A specifier to format label(s)
+#' @param dataLabels_size Number. Label font size
+#' @param dataLabels_color String with hexadecimal color for the label
+#' @param dataLabels_text_outline Boolean. If TRUE, data labels are show with outline
+#' @param opts All of the previous options can be passed as list of options opts
+#' @name chart_viz_options
+#'
+dsviz_default_opts <- function(...){
 
   # opts$agg_text<- opts$agg_text %||% opts$agg
   # opts$palette_colors <- opts$palette_colors %||% opts$theme$palette_colors
   # opts$background_color <- opts$background_color %||% opts$theme$background_color
   # opts
+  titleOpts <- list(
+    title = NULL,
+    ver_title = NULL,
+    hor_title = NULL,
+    subtitle = NULL,
+    caption = NULL,
+    legend_title = NULL
+  )
 
   preprocessOpts <- list(
     drop_na = FALSE,
@@ -103,9 +98,7 @@ dsviz_default_opts <- function(drop_na = NULL,
     prefix = "",
     suffix = "",
     label_wrap_legend = 12,
-    label_ratio = 1#,
-    # highlight_value = NULL,
-    # highlight_value_color = '#F9B233',
+    label_ratio = 1
   )
   chartOpts <- list(
     orientation = "ver",
@@ -185,15 +178,6 @@ dsviz_default_opts <- function(drop_na = NULL,
     dataLabels_size = NULL,
     dataLabels_color = NULL,
     dataLabels_text_outline = TRUE
-  )
-
-  titleOpts <- list(
-    title = NULL,
-    ver_title = NULL,
-    hor_title = NULL,
-    subtitle = NULL,
-    caption = NULL,
-    legend_title = NULL
   )
 
   themeOpts <- list(

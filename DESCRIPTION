@@ -8,9 +8,6 @@ Authors@R:
            email = "first.last@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: What the package does (one paragraph).
-License: MIT + file LICENSE
-Encoding: UTF-8
-LazyData: true
 Suggests: 
     testthat (>= 2.1.0),
     knitr,
@@ -21,5 +18,10 @@ Suggests:
     rmarkdown
 Imports: 
     dplyr
-VignetteBuilder: knitr
+VignetteBuilder: 
+    knitr
+License: MIT + file LICENSE
+LazyData: true
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Encoding: UTF-8

@@ -1,6 +1,7 @@
 
 #' Theme Options
 #'
+#' @export
 #' @param logo Logo path or url
 #' @param logo_position Logo "left" or "right"
 #' @param palette_colors Vector of colors
@@ -55,7 +56,7 @@
 #' @param label_size ? Text size
 #' @param label_text_decoration ? Text decoration
 #' @param label_text_outline ? Text outline
-#' @export
+#'
 default_theme_opts <- function( logo = NULL,
                                 logo_position = NULL,
                                 palette_colors = NULL,
@@ -122,7 +123,7 @@ default_theme_opts <- function( logo = NULL,
 
     palette_colors = NULL,
     palette_type = NULL,
-    palette_colors_categorical = datasketch_style()$palette,
+    palette_colors_categorical = datasketch_style()$categorical,
     palette_colors_sequential = datasketch_style()$sequential,
     palette_colors_divergent = datasketch_style()$divergent,
     na_color = "#cbcdcf",
