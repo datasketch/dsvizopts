@@ -254,7 +254,7 @@ mergeOptions <- function(..., defaults = NULL){
 
 pull_opt_group <- function(opts, group){
   defaults <- dsviz_defaults(flat = FALSE)
-  group_names <- map(defaults, names)
+  group_names <- purrr::map(defaults, names)
   if(!group %in% names(defaults))
     stop("Option group not found, must be one of: ",
          paste0(names(group_names), collapse = ", "))
@@ -265,7 +265,7 @@ pull_opt_group <- function(opts, group){
 }
 
 
-is_flat_list <- function(x) all(map_lgl(x, ~!is.list(.)))
+is_flat_list <- function(x) all(purrr::map_lgl(x, ~!is.list(.)))
 
 options_flatten <- function(x){
   if(is.null(x)) return()
