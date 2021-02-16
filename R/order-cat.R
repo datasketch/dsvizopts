@@ -16,7 +16,7 @@ order_category <- function(data, col, order, label_wrap, new_line = "<br/>") {
   if (is.null(label_wrap)) {
     data <- data
   } else {
-    data[[col]] <- gsub("\\\n", new_line, str_wrap(data[[col]], label_wrap))
+    data[[col]] <- gsub("\\\n", new_line, stringr::str_wrap(data[[col]], label_wrap))
   }
   data
 }

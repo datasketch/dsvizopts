@@ -69,7 +69,7 @@ topo_info <- function(map_name) {
 #'@export
 data_centroid <- function(geoname, basename) {
   centroides <- file.path("geodata", geoname, paste0(basename,".csv"))
-  centroides <- read_csv(system.file(centroides,package = "geodata")) %>% drop_na()
+  centroides <- readr::read_csv(system.file(centroides,package = "geodata")) %>% tidyr::drop_na()
   centroides
 }
 
