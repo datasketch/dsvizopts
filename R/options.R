@@ -4,20 +4,20 @@
 #' @description
 #' This page describes the chart options arguments
 #' @export
-#' @param title String with the main title (on top). Default is NULL
+#' @param title String. Title with the main title (on top). Default is NULL
 #' @param subtitle String for subtitle (below the title). Default is NULL
 #' @param caption String for caption (bottom). Default is NULL
-#' @param hor_title String. The main title (on top). Default is NULL
-#' @param ver_title String. The main title (on top). Default is NULL
+#' @param hor_title String. Horizontal axis title . Default is NULL
+#' @param ver_title String. Vertical axis title . Default is NULLL
 #' @param legend_title String. The main title (on top). Default is NULL
 #' @param palette_colors An optional character vector specifying the colors
-#' @param palette_type  String with type of color palette (optional). You can choose into
+#' @param palette_type  String with type of color palette (optional). Options:
 #'  "categorical", "sequential" and "divergent" palettes, more info in  <[`palette-types`][dsvizopts_palette_type]>
 #' @param color_by A character with the name of the variable by which you want to color the graph. Default is NULL
 #' @param drop_na Boolean. If TRUE drop missing values
 #' @param na_label String with label that should be used to recode missing values. Default is "(NA)"
 #' @param drop_na_legend Boolean. If TRUE drop missing values in legend
-#' @param agg Compute summary statistics of data, the default aggregation is "sum" but "mean" and "median" are available
+#' @param agg Aggregation type to compute summary statistics of data. Options: "sum", "mean", "median". Default is "sum"
 #' @param agg_text When there is aggregation agg_text is prepended to grouped variable
 #' @param sort String. Order the bars by the values of the graphed category. Options: "without", "desc" (sort a variable in descending order), "asc" (sort a variable in ascending order). Default is "without.
 #' @param slice_n Numeric value, It allows you to select and remove unique rows
@@ -29,8 +29,8 @@
 #' @param format_sample_num A specifier to format numerical value(s), e.g. "1,234.56" or "1'234.5678"
 #' @param format_sample_dat A specifier to format date(s), e.g. "28/04/2020" or "February 28th 2020"
 #' @param locale Locale to use, e.g. "fr-FR" for french.
-#' @param label_wrap A numeric vector of length one to choose the number of characters of the label text (overflowing text will be placed in a new line below).
-#' @param label_wrap_legend A numeric vector of length one to choose the number of characters in each line of text in the legend (overflowing text will be placed in a new line below.)
+#' @param label_wrap Is this a numeric vector of length one or just an integer to choose the number of characters of the label text (overflowing text will be placed in a new line below).
+#' @param label_wrap_legendIs this a numeric vector of length one or just an integer to choose the number of characters in each line of text in the legend (overflowing text will be placed in a new line below.)
 #' @param spline Boolean. If TRUE, the segments between the data points are smoothed.
 #' @param suffix Character string to append before formatted value.
 #' @param prefix Character string to append after formatted value.

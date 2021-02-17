@@ -8,21 +8,21 @@
 dsviz_default_opts(...)
 }
 \arguments{
-\item{title}{String with the main title (on top). Default is NULL}
+\item{title}{String. Title with the main title (on top). Default is NULL}
 
 \item{subtitle}{String for subtitle (below the title). Default is NULL}
 
 \item{caption}{String for caption (bottom). Default is NULL}
 
-\item{hor_title}{String. The main title (on top). Default is NULL}
+\item{hor_title}{String. Horizontal axis title . Default is NULL}
 
-\item{ver_title}{String. The main title (on top). Default is NULL}
+\item{ver_title}{String. Vertical axis title . Default is NULLL}
 
 \item{legend_title}{String. The main title (on top). Default is NULL}
 
 \item{palette_colors}{An optional character vector specifying the colors}
 
-\item{palette_type}{String with type of color palette (optional). You can choose into
+\item{palette_type}{String with type of color palette (optional). Options:
 "categorical", "sequential" and "divergent" palettes, more info in  <\code{\link[=dsvizopts_palette_type]{palette-types}}>}
 
 \item{color_by}{A character with the name of the variable by which you want to color the graph. Default is NULL}
@@ -33,7 +33,7 @@ dsviz_default_opts(...)
 
 \item{drop_na_legend}{Boolean. If TRUE drop missing values in legend}
 
-\item{agg}{Compute summary statistics of data, the default aggregation is "sum" but "mean" and "median" are available}
+\item{agg}{Aggregation type to compute summary statistics of data. Options: "sum", "mean", "median". Default is "sum"}
 
 \item{agg_text}{When there is aggregation agg_text is prepended to grouped variable}
 
@@ -57,9 +57,9 @@ dsviz_default_opts(...)
 
 \item{locale}{Locale to use, e.g. "fr-FR" for french.}
 
-\item{label_wrap}{A numeric vector of length one to choose the number of characters of the label text (overflowing text will be placed in a new line below).}
+\item{label_wrap}{Is this a numeric vector of length one or just an integer to choose the number of characters of the label text (overflowing text will be placed in a new line below).}
 
-\item{label_wrap_legend}{A numeric vector of length one to choose the number of characters in each line of text in the legend (overflowing text will be placed in a new line below.)}
+\item{label_wrap_legendIs}{this a numeric vector of length one or just an integer to choose the number of characters in each line of text in the legend (overflowing text will be placed in a new line below.)}
 
 \item{spline}{Boolean. If TRUE, the segments between the data points are smoothed.}
 
