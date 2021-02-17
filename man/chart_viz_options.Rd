@@ -8,17 +8,17 @@
 dsviz_default_opts(...)
 }
 \arguments{
-\item{title}{String. Title with the main title (on top). Default is NULL}
+\item{title}{String with the main title (on top). Default is NULL}
 
 \item{subtitle}{String for subtitle (below the title). Default is NULL}
 
 \item{caption}{String for caption (bottom). Default is NULL}
 
-\item{hor_title}{String. Horizontal axis title . Default is NULL}
+\item{hor_title}{String with horizontal axis title. Default is NULL}
 
-\item{ver_title}{String. Vertical axis title . Default is NULLL}
+\item{ver_title}{String with vertical axis title . Default is NULLL}
 
-\item{legend_title}{String. The main title (on top). Default is NULL}
+\item{legend_title}{String with the main title to legend. Default is NULL}
 
 \item{palette_colors}{An optional character vector specifying the colors}
 
