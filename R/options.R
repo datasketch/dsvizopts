@@ -153,6 +153,8 @@ dsviz_default_opts <- function(...){
     map_quantile = 4,
     map_cutoff_points = NULL,
     map_radius = 5,
+    map_provider_tile = "leaflet", #leaflet or ESRI
+    map_extra_layout = NULL, #other layouts
     map_min_size = 1,
     map_max_size = 10,
     map_stroke = FALSE,
