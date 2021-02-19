@@ -174,7 +174,11 @@ default_theme_opts <- function( logo = NULL,
     border_weight = 2,
     border_color = "#28333f",
     topo_fill_opacity = 0.8,
+    map_provider_tile = "leaflet", #leaflet or ESRI
+    map_extra_layout = NULL, #other layouts (URL)
+    map_name_layout = NULL,
     map_tiles = NULL,
+    map_tiles_esri = "Topographic",
     map_zoom = TRUE,
 
     # Lines and areas
