@@ -18,6 +18,8 @@ Suggests:
     rmarkdown
 Imports: 
     dplyr
+Remotes:
+    datasketch/dsthemer
 VignetteBuilder: 
     knitr
 License: MIT + file LICENSE
