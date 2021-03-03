@@ -1,3 +1,4 @@
+#' @importFrom dplyr %>%
 
 #' @export
 get_extra_opts <- function(opts, pattern = "."){
