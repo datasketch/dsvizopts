@@ -58,7 +58,8 @@ summarizeData <- function(df, agg, to_agg, ...) {
 #' @export
 
 topo_info <- function(map_name) {
-  rgdal::readOGR(geodataTopojsonPath(map_name))
+  #rgdal::readOGR(geodataTopojsonPath(map_name))
+  geojsonio::topojson_read(geodataTopojsonPath(map_name))
 }
 
 
