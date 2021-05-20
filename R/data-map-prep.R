@@ -1,7 +1,12 @@
 #' @export
-data_map_prep <- function (data, ftype, agg, ptage_col, group_extra_num = TRUE, ...) {
+data_map_prep <- function (data, ftype, agg, ptage_col, more_levels = FALSE, group_extra_num = TRUE, ...) {
 
   if (is.null(data)) return()
+
+  if (grepl("Gnm", ftype) & more_levels) {
+    data[[1]] <- paste0(data[[1]], " - ", data[[2]])
+    data <- data[,-2]
+  }
 
   f <- homodatum::fringe(data)
   nms <- homodatum::fringe_labels(f)
@@ -17,6 +22,7 @@ data_map_prep <- function (data, ftype, agg, ptage_col, group_extra_num = TRUE, 
   }
   frtype <- f$frtype
   dic <- f$dic
+  if (more_levels) dic$hdType[1] <- "Gnm"
   dic$id <- names(d)
 
   dic <- dic %>%
@@ -131,46 +137,60 @@ data_map_prep <- function (data, ftype, agg, ptage_col, group_extra_num = TRUE, 
 }
 
 
+
+
+
+#' shape info
+#'
+#' @param map_name Map name
+#' @param ftype Data class by column
+#' @param by_col Variables to join centroids with shape file
+#'
+#' @examples
+#'
+#' shape_info("col_departments", ftype = "Gnm-Num")
 #' @export
-format_prep <- function(data, dic, formats) {
+shape_info <- function (map_name, ftype, by_col = "name", addRds = FALSE) {
 
-  if (is.null(data)) return()
+  if (is.null(map_name)) stop("You must type a map name")
+  if (!map_name %in% geodata::availableGeodata()) stop("You map name isn't available, view availableGeodata()")
 
-  var_nums <- grep("Num", dic$hdType)
-
-  if (!identical(var_nums, integer())) {
-    var_nums <- dic$id[var_nums]
-
-    l_nums <- purrr::map(var_nums, function(f_nums){
-      data[[paste0(f_nums, "_label")]] <<- makeup::makeup_num(as.numeric(data[[f_nums]]), sample = formats$sample_num)
-    })}
-
-  var_nums <- grep("Glt|Gln", dic$hdType)
-
-  if (!identical(var_nums, integer())) {
-    var_nums <- dic$id[var_nums]
-
-    l_nums <- purrr::map(var_nums, function(f_nums){
-      data[[paste0(f_nums, "_label")]] <<- as.numeric(data[[f_nums]])
-    })}
-
-  var_cats <- grep("^Cat$|Gnm|Gcd", dic$hdType)
-  if (!identical(var_cats, integer())) {
-    var_cats <- dic$id[var_cats]
-    l_nums <- purrr::map(var_cats, function(f_cats){
-      data[[paste0(f_cats, "_label")]] <<- makeup::makeup_chr(as.character(data[[f_cats]]), sample = formats$sample_cat)
-    })}
-
-  var_cats_extra <- grep("Cat..", dic$hdType)
-
-  if (!identical(var_cats_extra, integer())) {
-    var_cats_extra <- dic$id[var_cats_extra]
-
-    l_nums <- purrr::map(var_cats_extra, function(f_cats..){
-      data[[paste0(f_cats.., "_label")]] <<- makeup::makeup_chr(as.character(data[[f_cats..]]), sample = NULL)
-    })}
+  geoInfo <- geodata::geoinfo(mapName = map_name)
+  centroides <- geoInfo$centroids
+  nms_centroides <- names(centroides)
+  aditional_name <- setdiff(nms_centroides, c("id", "name", "lat", "lon"))
+  more_levels <- !identical(aditional_name, character())
+  centroides_join <- centroides[c("id", "lat", "lon")]
+  topoInfo <- geoInfo$geo_sf
 
 
-  data
+  topoInfo <- topoInfo %>%
+    dplyr::left_join(centroides_join, by =  "id") %>%
+    mutate(id = as.character(id))
 
+  topoInfo_names <- names(topoInfo)
+
+  if (grepl("Gnm", ftype) & !identical(aditional_name, character())) {
+    topoInfo$name_alt <- paste0(topoInfo$name, " - ", topoInfo[[aditional_name]])
+  } else {
+    topoInfo$name_alt <- as.character(topoInfo[[by_col]])
+  }
+
+  topoInfo$name_alt <- iconv(tolower(topoInfo$name_alt), to = "ASCII//TRANSLIT")
+  topoInfo$name_label <- topoInfo$name
+  topoInfo <- topoInfo %>% st_set_crs(3857)
+
+
+  out <- list(
+    topoInfo = topoInfo,
+    more_levels = more_levels
+  )
+
+  if (addRds) {
+    out <- modifyList(out, list(
+      rdsInfo = geoInfo$geo_rds
+    ))
+  }
+
+  out
 }
