@@ -1,0 +1,176 @@
+#' @export
+data_map_prep <- function (data, ftype, agg, ptage_col, group_extra_num = TRUE, ...) {
+
+  if (is.null(data)) return()
+
+  f <- homodatum::fringe(data)
+  nms <- homodatum::fringe_labels(f)
+  nms[length(nms)+1] <- c("%")
+  names(nms) <- c(names(nms)[-length(nms)], "..percentage")
+  nms[length(nms)+1] <- c("Count")
+  names(nms) <- c(names(nms)[-length(nms)], "..count")
+  d <- homodatum::fringe_d(f)
+  if (grepl("Gln|Glt", ftype)) {
+    d <- d %>% tidyr::drop_na(a, b)
+  } else {
+    d <- d %>% tidyr::drop_na(a)
+  }
+  frtype <- f$frtype
+  dic <- f$dic
+  dic$id <- names(d)
+
+  dic <- dic %>%
+    dplyr::bind_rows(
+      data.frame(id = c("..percentage", "..count", "value"),
+                 label = c("Percentage", "Count", "Domain"),
+                 hdType = rep("Num", 3))
+    )
+
+  ncols_d <- ncol(d)
+
+  ftype_vec <- stringr::str_split(ftype,pattern = "-") %>% unlist()
+  ftype_length <- length(ftype_vec)
+
+  add_cols <- ncols_d != ftype_length
+
+  dd <- d[,1:ftype_length]
+  dic_p <- dic %>% dplyr::filter(id %in% names(dd))
+
+
+  # type data to work
+  has_num <- grepl("Num", ftype)
+  var_num <- NULL
+  agg_var <- "..count"
+  if (has_num) {
+    var_num <- dic_p %>% dplyr::filter(hdType %in% "Num") %>% .$id
+    agg_var <- names(nms)[grep("Num", ftype_vec)]
+  }
+
+  has_cat <- grepl("Cat", ftype)
+  var_cat <- NULL
+  if (has_cat) var_cat <- dic_p %>% dplyr::filter(hdType %in% "Cat") %>% .$id
+
+  has_geo <- grepl("Gcd|Gnm", ftype)
+  var_group <- NULL
+  if (has_geo) var_group <- dic_p %>% dplyr::filter(hdType %in% c("Gcd", "Gnm")) %>% .$id
+  if (!is.null(var_cat)) var_group <- c(var_group, var_cat)
+
+  has_cor <- grepl("Gln|Glt", ftype)
+  var_cor <- NULL
+  if (has_cor) {
+    var_cor <- dic_p %>% dplyr::filter(hdType %in% c("Gln", "Glt")) %>% .$id
+    var_group <- c(var_group, var_cor)
+  }
+
+  if (has_geo | has_cor) {
+    if (length(var_group) == 1) {
+      dd <- dsvizopts::function_agg(dd, agg, to_agg = var_num, a)
+      ptage_col <- NULL
+    } else if (length(var_group) == 2) {
+      dd <- dsvizopts::function_agg(dd, agg, to_agg = var_num, a, b)
+    } else if (length(var_group) == 3) {
+      dd <- dsvizopts::function_agg(dd, agg, to_agg = var_num, a, b, c)
+    }
+  }
+
+  if (!is.null(ptage_col))  ptage_col <- names(nms[match(ptage_col, nms)])
+
+  dd <- dsvizopts::percentage_data(dd, agg_var = agg_var, by_col = ptage_col)
+
+  if (add_cols) {
+    join_cols <- dic_p$id[1:length(var_group)]
+    extra_cols <- setdiff(dic$id, c(dic_p$id, "..percentage", "..count", "value"))
+    dj <- d[c(join_cols, extra_cols)]
+
+    # extra num cols
+    dic_extra <- dic %>% dplyr::filter(id %in% extra_cols)
+    var_num_extra <- dic_extra$id[dic_extra$hdType == "Num"]
+    var_cat_extra <- dic_extra$id[dic_extra$hdType == "Cat"]
+    if (!identical(var_cat_extra, character())) {
+      dic$hdType[dic$id %in% var_cat_extra] <- "Cat.."
+    }
+
+    if (!identical(var_num_extra, character())) {
+      # if (group_extra_num) {
+      #   if (length(join_cols) == 1) {
+      #     dj_s <- simple_summary(dj, agg, to_agg = var_num_extra, a)
+      #   } else if (length(join_cols) == 2) {
+      #     dj_s <- simple_summary(dj, agg, to_agg = var_num_extra, a, b)
+      #   } else if (length(join_cols) == 3) {
+      #     dj_s <- simple_summary(dj, agg, to_agg = var_num_extra, a, b, c)
+      #   }
+      #   dj <- dj %>% left_join(dj_s)
+      # } else {
+      dic$hdType[dic$id %in% var_num_extra] <- "Cat.."
+      #}
+    }
+
+    if (length(join_cols) == 1) {
+      dj <- dsvizopts::collapse_data(dj, a)
+    } else if (length(join_cols) == 2) {
+      dj <- dsvizopts::collapse_data(dj, a, b)
+    } else if (length(join_cols) == 3) {
+      dj <- dsvizopts::collapse_data(dj, a, b, c)
+    }
+
+    dd <- dd %>% dplyr::left_join(dj, by = join_cols)
+
+  }
+
+  dd$value <- dd[[agg_var]]
+  nms_tooltip <- setNames(dic_p$label, dic_p$id)
+
+  l <- list(
+    data = dd,
+    dic = dic,
+    nms = nms,
+    nms_tooltip = nms_tooltip #default tooltip when this is null
+  )
+
+
+}
+
+
+#' @export
+format_prep <- function(data, dic, formats) {
+
+  if (is.null(data)) return()
+
+  var_nums <- grep("Num", dic$hdType)
+
+  if (!identical(var_nums, integer())) {
+    var_nums <- dic$id[var_nums]
+
+    l_nums <- purrr::map(var_nums, function(f_nums){
+      data[[paste0(f_nums, "_label")]] <<- makeup::makeup_num(as.numeric(data[[f_nums]]), sample = formats$sample_num)
+    })}
+
+  var_nums <- grep("Glt|Gln", dic$hdType)
+
+  if (!identical(var_nums, integer())) {
+    var_nums <- dic$id[var_nums]
+
+    l_nums <- purrr::map(var_nums, function(f_nums){
+      data[[paste0(f_nums, "_label")]] <<- as.numeric(data[[f_nums]])
+    })}
+
+  var_cats <- grep("^Cat$|Gnm|Gcd", dic$hdType)
+  if (!identical(var_cats, integer())) {
+    var_cats <- dic$id[var_cats]
+    l_nums <- purrr::map(var_cats, function(f_cats){
+      data[[paste0(f_cats, "_label")]] <<- makeup::makeup_chr(as.character(data[[f_cats]]), sample = formats$sample_cat)
+    })}
+
+  var_cats_extra <- grep("Cat..", dic$hdType)
+
+  if (!identical(var_cats_extra, integer())) {
+    var_cats_extra <- dic$id[var_cats_extra]
+
+    l_nums <- purrr::map(var_cats_extra, function(f_cats..){
+      data[[paste0(f_cats.., "_label")]] <<- makeup::makeup_chr(as.character(data[[f_cats..]]), sample = NULL)
+    })}
+
+
+  data
+
+}
