@@ -178,7 +178,7 @@ shape_info <- function (map_name, ftype, by_col = "name", addRds = FALSE) {
 
   topoInfo$name_alt <- iconv(tolower(topoInfo$name_alt), to = "ASCII//TRANSLIT")
   topoInfo$name_label <- topoInfo$name
-  topoInfo <- topoInfo %>% st_set_crs(3857)
+  #topoInfo <- topoInfo %>% st_set_crs(3857)
 
 
   out <- list(
