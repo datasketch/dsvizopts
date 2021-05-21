@@ -1,5 +1,27 @@
+
+#' General function for processing geographic data
+#'
+#' @param data A data frame with geografical info.
+#' @param ftype A string value with type of data to be plotted
+#' @param agg Statistics which can be applied to all data subsets (sum, mean, median)
+#' @param ptage_col A string value with the name of the categorical variable against which the percentage is calculated.
+#' @param more_levels A logical indicating if the map has more than one territorial level.
+#' @param group_extra_num A logical indicating
+#'
+#' @examples
+#'
+#' df <- sample_data("Gnm-Cat-Num")
+#' data_map_prep(data = df, ftype = "Gnm-Cat-Num". agg = "sum")
+#'
+#' df <- data.frame(id = "COL", "URY", "ARG")
+#' df$id <- as_Gnm(df$id)
+#' data_map_prep(data = df, ftype = "Gcd". agg = "mean")
+#'
+#' df <- sample_data("Gnm-Gcd-Num-Cat-Cat-Num")
+#' data_map_prep(data = df, ftype = "Gnm-Num", agg = "sum", more_levels = TRUE)
+#'
 #' @export
-data_map_prep <- function (data, ftype, agg, ptage_col, more_levels = FALSE, group_extra_num = TRUE, ...) {
+data_map_prep <- function (data, ftype, agg, ptage_col = NULL, more_levels = FALSE, group_extra_num = TRUE) {
 
   if (is.null(data)) return()
 
@@ -132,8 +154,7 @@ data_map_prep <- function (data, ftype, agg, ptage_col, more_levels = FALSE, gro
     nms = nms,
     nms_tooltip = nms_tooltip #default tooltip when this is null
   )
-
-
+  l
 }
 
 
@@ -142,9 +163,10 @@ data_map_prep <- function (data, ftype, agg, ptage_col, more_levels = FALSE, gro
 
 #' shape info
 #'
-#' @param map_name Map name
+#' @param map_name Map name, view \code{geodata::availableGeodata()}
 #' @param ftype Data class by column
 #' @param by_col Variables to join centroids with shape file
+#' @param addRds A logical indicating if the output should contain the geographic information saved in rds.
 #'
 #' @examples
 #'

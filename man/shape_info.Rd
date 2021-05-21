@@ -7,11 +7,13 @@
 shape_info(map_name, ftype, by_col = "name", addRds = FALSE)
 }
 \arguments{
-\item{map_name}{Map name}
+\item{map_name}{Map name, view \code{geodata::availableGeodata()}}
 
 \item{ftype}{Data class by column}
 
 \item{by_col}{Variables to join centroids with shape file}
+
+\item{addRds}{A logical indicating if the output should contain the geographic information saved in rds.}
 }
 \description{
 shape info
