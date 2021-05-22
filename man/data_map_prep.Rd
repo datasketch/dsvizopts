@@ -8,6 +8,7 @@ data_map_prep(
   data,
   ftype,
   agg,
+  color_by = NULL,
   ptage_col = NULL,
   more_levels = FALSE,
   group_extra_num = TRUE
@@ -19,6 +20,8 @@ data_map_prep(
 \item{ftype}{A string value with type of data to be plotted}
 
 \item{agg}{Statistics which can be applied to all data subsets (sum, mean, median)}
+
+\item{color_by}{A character with the name of the variable by which you want to color the graph. Default is NULL}
 
 \item{ptage_col}{A string value with the name of the categorical variable against which the percentage is calculated.}
 

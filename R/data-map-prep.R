@@ -4,6 +4,7 @@
 #' @param data A data frame with geografical info.
 #' @param ftype A string value with type of data to be plotted
 #' @param agg Statistics which can be applied to all data subsets (sum, mean, median)
+#' @param color_by A character with the name of the variable by which you want to color the graph. Default is NULL
 #' @param ptage_col A string value with the name of the categorical variable against which the percentage is calculated.
 #' @param more_levels A logical indicating if the map has more than one territorial level.
 #' @param group_extra_num A logical indicating
@@ -21,7 +22,13 @@
 #' data_map_prep(data = df, ftype = "Gnm-Num", agg = "sum", more_levels = TRUE)
 #'
 #' @export
-data_map_prep <- function (data, ftype, agg, ptage_col = NULL, more_levels = FALSE, group_extra_num = TRUE) {
+data_map_prep <- function (data,
+                           ftype,
+                           agg,
+                           color_by = NULL,
+                           ptage_col = NULL,
+                           more_levels = FALSE,
+                           group_extra_num = TRUE) {
 
   if (is.null(data)) return()
 
@@ -144,6 +151,9 @@ data_map_prep <- function (data, ftype, agg, ptage_col = NULL, more_levels = FAL
     dd <- dd %>% dplyr::left_join(dj, by = join_cols)
 
   }
+
+
+  if (!is.null(color_by)) agg_var <- names(nms[match(color_by, nms)])
 
   dd$value <- dd[[agg_var]]
   nms_tooltip <- setNames(dic_p$label, dic_p$id)
