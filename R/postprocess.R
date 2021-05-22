@@ -25,7 +25,11 @@ format_prep <- function(data, dic, formats) {
     var_nums <- dic$id[var_nums]
 
     l_nums <- purrr::map(var_nums, function(f_nums){
-      data[[paste0(f_nums, "_label")]] <<- makeup::makeup_num(as.numeric(data[[f_nums]]), sample = formats$sample_num)
+      data[[paste0(f_nums, "_label")]] <<- ifelse(is.na(data[[f_nums]]), NA,
+                                                  paste0(formats$prefix,
+                                                         makeup::makeup_num(as.numeric(data[[f_nums]]),
+                                                                            formats$sample_num),
+                                                         formats$suffix))
     })}
 
   var_nums <- grep("Glt|Gln", dic$hdType)
@@ -34,14 +38,16 @@ format_prep <- function(data, dic, formats) {
     var_nums <- dic$id[var_nums]
 
     l_nums <- purrr::map(var_nums, function(f_nums){
-      data[[paste0(f_nums, "_label")]] <<- as.numeric(data[[f_nums]])
+      data[[paste0(f_nums, "_label")]] <<- ifelse(is.na(data[[f_nums]]), NA, round(as.numeric(data[[f_nums]]),2))
     })}
 
   var_cats <- grep("^Cat$|Gnm|Gcd", dic$hdType)
   if (!identical(var_cats, integer())) {
     var_cats <- dic$id[var_cats]
     l_nums <- purrr::map(var_cats, function(f_cats){
-      data[[paste0(f_cats, "_label")]] <<- makeup::makeup_chr(as.character(data[[f_cats]]), sample = formats$sample_cat)
+      data[[paste0(f_cats, "_label")]] <<- ifelse(is.na(data[[f_cats]]), NA,
+                                                  makeup::makeup_chr(data[[f_cats]],
+                                                                     formats$sample_cat))
     })}
 
   var_cats_extra <- grep("Cat..", dic$hdType)
