@@ -32,13 +32,13 @@ format_prep <- function(data, dic, formats) {
                                                          formats$suffix))
     })}
 
-  var_nums <- grep("Glt|Gln", dic$hdType)
+  var_coor <- grep("Glt|Gln", dic$hdType)
 
-  if (!identical(var_nums, integer())) {
-    var_nums <- dic$id[var_nums]
+  if (!identical(var_n, integer())) {
+    var_coor <- dic$id[var_coor]
 
-    l_nums <- purrr::map(var_nums, function(f_nums){
-      data[[paste0(f_nums, "_label")]] <<- ifelse(is.na(data[[f_nums]]), NA, round(as.numeric(data[[f_nums]]),2))
+    l_nums <- purrr::map(var_coor, function(f_coor){
+      data[[paste0(f_coor, "_label")]] <<- ifelse(is.na(data[[f_coor]]), NA, round(as.numeric(data[[f_coor]]),2))
     })}
 
   var_cats <- grep("^Cat$|Gnm|Gcd", dic$hdType)
