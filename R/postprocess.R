@@ -34,7 +34,7 @@ format_prep <- function(data, dic, formats) {
 
   var_coor <- grep("Glt|Gln", dic$hdType)
 
-  if (!identical(var_n, integer())) {
+  if (!identical(var_coor, integer())) {
     var_coor <- dic$id[var_coor]
 
     l_nums <- purrr::map(var_coor, function(f_coor){
