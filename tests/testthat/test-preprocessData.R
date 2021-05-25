@@ -1,9 +1,9 @@
 test_that("Process data options", {
 
-  d <- data.frame(a = c("Cats", "Cats", NA), b = c(1:3))
+  d <- data.frame(a = c("Cats", "Cats", NA), b = c(1:3), stringsAsFactors = FALSE)
   d2 <- preprocessData(d, drop_na = TRUE)
   expect_equal(nrow(d2), 2)
-  d <- data.frame(a = factor(c("Cats", "Cats", NA)), b = c(1:3))
+  d <- data.frame(a = factor(c("Cats", "Cats", NA)), b = c(1:3), stringsAsFactors = FALSE)
   d3 <- preprocessData(d, drop_na = FALSE, na_label = "NoInfo", na_label_cols = "a")
   expect_equal(levels(d3$a), c("Cats","NoInfo"))
 
@@ -13,7 +13,8 @@ test_that("Process data options", {
 })
 
 test_that("Agreggation by groups", {
-  d <- data.frame(transport = c("ship", "ship", "ship", "plane", "train"), units = runif(5))
+  d <- data.frame(transport = c("ship", "ship", "ship", "plane", "train"), units = runif(5),
+                  stringsAsFactors = FALSE)
   d2 <- summarizeData(d, "sum", to_agg = units, transport)
   expect_equal(sort(unique(d2$transport)), sort(unique(d$transport)))
 })

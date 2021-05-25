@@ -58,7 +58,7 @@ data_map_prep <- function (data,
     dplyr::bind_rows(
       data.frame(id = c("..percentage", "..count", "value"),
                  label = c("Percentage", "Count", "Domain"),
-                 hdType = rep("Num", 3))
+                 hdType = rep("Num", 3), stringsAsFactors = FALSE)
     )
 
   ncols_d <- ncol(d)
