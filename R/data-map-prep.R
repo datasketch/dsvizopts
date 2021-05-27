@@ -156,7 +156,7 @@ data_map_prep <- function (data,
   if (!is.null(color_by)) agg_var <- names(nms[match(color_by, nms)])
 
   dd$value <- dd[[agg_var]]
-  nms_tooltip <- setNames(dic_p$label, dic_p$id)
+  nms_tooltip <- stats::setNames(dic_p$label, dic_p$id)
 
   l <- list(
     data = dd,
@@ -198,7 +198,7 @@ shape_info <- function (map_name, ftype, by_col = "name", addRds = FALSE) {
 
   topoInfo <- topoInfo %>%
     dplyr::left_join(centroides_join, by =  "id") %>%
-    mutate(id = as.character(id))
+    dplyr::mutate(id = as.character(id))
 
   topoInfo_names <- names(topoInfo)
 
@@ -219,7 +219,7 @@ shape_info <- function (map_name, ftype, by_col = "name", addRds = FALSE) {
   )
 
   if (addRds) {
-    out <- modifyList(out, list(
+    out <- utils::modifyList(out, list(
       rdsInfo = geoInfo$geo_rds
     ))
   }
