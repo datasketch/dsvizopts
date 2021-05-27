@@ -97,7 +97,7 @@ percentage_data <- function (data, agg_var, by_col = NULL) {
 
   if (is.null(by_col)) {
     df <- data %>%
-      mutate(..percentage = (!!agg_var_t/sum(!!agg_var_t, na.rm = TRUE))*100)
+      dplyr::mutate(..percentage = (!!agg_var_t/sum(!!agg_var_t, na.rm = TRUE))*100)
   } else {
     df <- data %>%
       dplyr::group_by_(by_col) %>%
