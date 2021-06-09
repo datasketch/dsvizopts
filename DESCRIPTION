@@ -1,24 +1,14 @@
 Package: dsvizopts
-Title: What the Package Does (One Line, Title Case)
+Title: Viz options
 Version: 0.1.0
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Author: Datasketch
+Description: List with general options to graphs
 Depends:
     R (>= 3.0.0),
-    highcharter (>= 0.4.0.9999),
     tidyr,
     purrr,
-    homodatum,
-    makeup,
-    geodata,
     yaml,
-    dplyr,
-    sf
+    dplyr
 Suggests: 
     testthat (>= 2.1.0),
     knitr,

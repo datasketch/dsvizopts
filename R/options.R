@@ -95,6 +95,7 @@ dsviz_default_opts <- function(...){
     locale = "en-US",
     label_wrap = 12,
     spline = FALSE,
+    invert = FALSE,
     prefix = "",
     suffix = "",
     label_wrap_legend = 12,

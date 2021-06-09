@@ -4,12 +4,8 @@
 \name{dsvizopts-package}
 \alias{dsvizopts}
 \alias{dsvizopts-package}
-\title{dsvizopts: What the Package Does (One Line, Title Case)}
+\title{dsvizopts: Viz options}
 \description{
-What the package does (one paragraph).
-}
-\author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
-
+List with general options to graphs
 }
 \keyword{internal}
