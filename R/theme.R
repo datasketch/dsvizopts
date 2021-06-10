@@ -133,7 +133,7 @@ default_theme_opts <- function( logo = NULL,
     grid_y_size = NULL,
     grid_y_line_type = NULL,
     grid_y_width  = 1,
-
+    y_max = NULL,
 
     # SPACE THAT COVERS ALL THE GRAPHIC
     plot_margin_bottom = NULL,
