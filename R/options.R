@@ -141,7 +141,7 @@ dsviz_default_opts <- function(...){
   )
 
   tableOpts <- list(
-    table_groupBy = NULL,
+    groupBy = NULL,
     sortable = TRUE,
     resizable = FALSE,
     filterable = FALSE,
@@ -149,10 +149,10 @@ dsviz_default_opts <- function(...){
     selection = "single",
     showSortIcon = TRUE,
     showSortable =  TRUE,
-    table_height = "auto",
-    table_width = "auto",
+    height = "auto",
+    width = "auto",
     fullWidth = TRUE,
-    table_wrap = TRUE,
+    wrap = TRUE,
     outlined = FALSE,
     bordered = FALSE,
     borderless = TRUE,
