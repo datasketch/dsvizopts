@@ -290,6 +290,7 @@ merge_dsviz_options <- function(...){
     dataLabels = pull_opt_group(opts_flat, "dataLabels"),
     extra = pull_opt_group(opts_flat, "extra"),
     shiny = pull_opt_group(opts_flat, "shiny"),
+    table = pull_opt_group(opts_flat, "table"),
     theme = theme
   )
 }
