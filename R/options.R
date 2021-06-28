@@ -165,7 +165,7 @@ dsviz_default_opts <- function(...){
     showPageSizeOptions = FALSE,
     paginationType = "numbers",
     defaultPageSize = 10,
-    pageSizeOptions = c(10, 25, 50, 100),
+    pageSizeOptions = c(10, 25, 50, 100)
   )
 
   shinyOpts <- list(
@@ -256,6 +256,7 @@ dsviz_default_opts <- function(...){
     postprocess = postprocessOpts,
     style = styleOpts,
     chart = chartOpts,
+    table = tableOpts,
     title = titleOpts,
     dataLabels = dataLabelsOpts,
     extra = extraOpts,
