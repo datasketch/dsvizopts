@@ -49,7 +49,7 @@
 #' @param resizable Enable column resizing? Default is FALSE.
 #' @param filterable Enable column filtering? Default is FALSE.
 #' @param searchable Enable global table searching? Default is FALSE.
-#' @param selection Enable row selection? Either "multiple" or "single" for multiple or single row selection. Default is "single".
+#' @param selection Enable row selection? Either "multiple" or "single" for multiple or single row selection. Default is NULL.
 #' @param showSortIcon Show a sort icon when sorting columns? Default is TRUE.
 #' @param showSortable Show an indicator on sortable columns? Default is TRUE.
 #' @param height Height of the table in pixels. Default is "auto" for automatic sizing.
@@ -146,7 +146,7 @@ dsviz_default_opts <- function(...){
     resizable = FALSE,
     filterable = FALSE,
     searchable = FALSE,
-    selection = "single",
+    selection = NULL,
     showSortIcon = TRUE,
     showSortable =  TRUE,
     height = "auto",
