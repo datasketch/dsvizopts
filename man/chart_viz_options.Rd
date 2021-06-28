@@ -77,6 +77,57 @@ dsviz_default_opts(...)
 
 \item{tooltip}{HTML with information that appears when hovering your pointer over the graph. Variables are enclosed by curly brackets.}
 
+\item{groupBy}{Character vector of column names to group by.}
+
+\item{sortable}{Enable sorting? Default is TRUE.}
+
+\item{resizable}{Enable column resizing? Default is FALSE.}
+
+\item{filterable}{Enable column filtering? Default is FALSE.}
+
+\item{searchable}{Enable global table searching? Default is FALSE.}
+
+\item{selection}{Enable row selection? Either "multiple" or "single" for multiple or single row selection. Default is "single".}
+
+\item{showSortIcon}{Show a sort icon when sorting columns? Default is TRUE.}
+
+\item{showSortable}{Show an indicator on sortable columns? Default is TRUE.}
+
+\item{height}{Height of the table in pixels. Default is "auto" for automatic sizing.}
+
+\item{width}{Width of the table in pixels. Default is "auto" for automatic sizing.}
+
+\item{fullWidth}{Stretch the table to fill the full width of its container? Default is TRUE.}
+
+\item{wrap}{Enable text wrapping? Default is TRUE.}
+
+\item{outlined}{Add borders around the table? Default is FALSE.}
+
+\item{bordered}{Add borders around the table and every cell? Default is FALSE.}
+
+\item{borderless}{Remove inner borders from table? Default is TRUE.}
+
+\item{striped}{Add zebra-striping to table rows? Default is TRUE.}
+
+\item{compact}{Make tables more compact? Default is FALSE.}
+
+\item{highlight}{Highlight table rows on hover? Default is FALSE.}
+
+\item{pagination}{Enable pagination? Default is TRUE.}
+
+\item{showPagination}{Show pagination? Default is NULL (defaults to TRUE if the table has more than one page).}
+
+\item{showPageInfo}{Show page info? Default is TRUE.}
+
+\item{showPageSizeOptions}{Show page size options? Default is FALSE.}
+
+\item{paginationType}{Pagination control to use. Either "numbers" for page number buttons (the default),
+"jump" for a page jump, or "simple" to show 'Previous' and 'Next' buttons only.}
+
+\item{defaultPageSize}{Default page size for the table. Default is 10.}
+
+\item{pageSizeOptions}{Page size options for the table. Default is 10, 25, 50, 100.}
+
 \item{allow_point}{Boolean. If TRUE, allow this series' points to be selected by clicking on the graphic. Default is FALSE.}
 
 \item{color_click}{String with color to change the color of the series that was clicked.}
@@ -101,4 +152,8 @@ dsviz_default_opts(...)
 }
 \description{
 This page describes the chart options arguments
+
+The \code{tableOpts} options are used to style tables from the \code{reactable} package
+and their descriptions have been copied and slightly adapted from their Github
+\href{https://glin.github.io/reactable/reference/reactable.html}{documentation}.
 }
