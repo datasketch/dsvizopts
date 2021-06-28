@@ -3,6 +3,11 @@
 #'
 #' @description
 #' This page describes the chart options arguments
+#'
+#' The `tableOpts` options are used to style tables from the `reactable` package
+#' and their descriptions have been copied and slightly adapted from their Github
+#' [documentation](https://glin.github.io/reactable/reference/reactable.html).
+#'
 #' @export
 #' @param title String with the main title (on top). Default is NULL
 #' @param subtitle String for subtitle (below the title). Default is NULL
@@ -39,6 +44,32 @@
 #' @param highlight_value A character vector with the categories you want to highlight. Default is NULL
 #' @param highlight_value_color A character vector of length one with the color to highlight categories select in highlight_value
 #' @param tooltip HTML with information that appears when hovering your pointer over the graph. Variables are enclosed by curly brackets.
+#' @param groupBy Character vector of column names to group by.
+#' @param sortable Enable sorting? Default is TRUE.
+#' @param resizable Enable column resizing? Default is FALSE.
+#' @param filterable Enable column filtering? Default is FALSE.
+#' @param searchable Enable global table searching? Default is FALSE.
+#' @param selection Enable row selection? Either "multiple" or "single" for multiple or single row selection. Default is "single".
+#' @param showSortIcon Show a sort icon when sorting columns? Default is TRUE.
+#' @param showSortable Show an indicator on sortable columns? Default is TRUE.
+#' @param height Height of the table in pixels. Default is "auto" for automatic sizing.
+#' @param width Width of the table in pixels. Default is "auto" for automatic sizing.
+#' @param fullWidth Stretch the table to fill the full width of its container? Default is TRUE.
+#' @param wrap Enable text wrapping? Default is TRUE.
+#' @param outlined Add borders around the table? Default is FALSE.
+#' @param bordered Add borders around the table and every cell? Default is FALSE.
+#' @param borderless Remove inner borders from table? Default is TRUE.
+#' @param striped Add zebra-striping to table rows? Default is TRUE.
+#' @param compact Make tables more compact? Default is FALSE.
+#' @param highlight Highlight table rows on hover? Default is FALSE.
+#' @param pagination Enable pagination? Default is TRUE.
+#' @param showPagination Show pagination? Default is NULL (defaults to TRUE if the table has more than one page).
+#' @param showPageInfo Show page info? Default is TRUE.
+#' @param showPageSizeOptions Show page size options? Default is FALSE.
+#' @param paginationType Pagination control to use. Either "numbers" for page number buttons (the default),
+#' "jump" for a page jump, or "simple" to show 'Previous' and 'Next' buttons only.
+#' @param defaultPageSize Default page size for the table. Default is 10.
+#' @param pageSizeOptions Page size options for the table. Default is 10, 25, 50, 100.
 #' @param allow_point Boolean. If TRUE, allow this series' points to be selected by clicking on the graphic. Default is FALSE.
 #' @param color_click String with color to change the color of the series that was clicked.
 #' @param color_hover String with color to change the color of the series over which the mouse hovered.
@@ -107,6 +138,34 @@ dsviz_default_opts <- function(...){
     highlight_value = NULL,
     highlight_value_color = "#50c5b7",
     tooltip = ""
+  )
+
+  tableOpts <- list(
+    table_groupBy = NULL,
+    sortable = TRUE,
+    resizable = FALSE,
+    filterable = FALSE,
+    searchable = FALSE,
+    selection = "single",
+    showSortIcon = TRUE,
+    showSortable =  TRUE,
+    table_height = "auto",
+    table_width = "auto",
+    fullWidth = TRUE,
+    table_wrap = TRUE,
+    outlined = FALSE,
+    bordered = FALSE,
+    borderless = TRUE,
+    striped = TRUE,
+    compact = FALSE,
+    highlight = FALSE,
+    pagination = TRUE,
+    showPagination = NULL,
+    showPageInfo = TRUE,
+    showPageSizeOptions = FALSE,
+    paginationType = "numbers",
+    defaultPageSize = 10,
+    pageSizeOptions = c(10, 25, 50, 100),
   )
 
   shinyOpts <- list(
