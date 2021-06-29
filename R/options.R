@@ -70,6 +70,7 @@
 #' "jump" for a page jump, or "simple" to show 'Previous' and 'Next' buttons only.
 #' @param defaultPageSize Default page size for the table. Default is 10.
 #' @param pageSizeOptions Page size options for the table. Default is 10, 25, 50, 100.
+#' @param linksAsHyperlinks Cells that start with http, https or www will be converted to hyperlinks. Default is TRUE.
 #' @param allow_point Boolean. If TRUE, allow this series' points to be selected by clicking on the graphic. Default is FALSE.
 #' @param color_click String with color to change the color of the series that was clicked.
 #' @param color_hover String with color to change the color of the series over which the mouse hovered.
@@ -165,7 +166,8 @@ dsviz_default_opts <- function(...){
     showPageSizeOptions = FALSE,
     paginationType = "numbers",
     defaultPageSize = 10,
-    pageSizeOptions = c(10, 25, 50, 100)
+    pageSizeOptions = c(10, 25, 50, 100),
+    linksAsHyperlinks = TRUE
   )
 
   shinyOpts <- list(
