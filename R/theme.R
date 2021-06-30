@@ -118,7 +118,7 @@ default_theme_opts <- function( logo = NULL,
     axis_tick_length = 10,
 
     grid_color = "#d1d9db",
-    grid_line_type = "Solid",
+    grid_line_type = "Dot",
     grid_size = 0.3,
 
     # GRID X
