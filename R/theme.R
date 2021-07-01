@@ -164,7 +164,7 @@ default_theme_opts <- function( logo = NULL,
     legend_itemMarginTop = 0,
     legend_itemMarginBottom = 0,
     legend_reversed = FALSE,
-    legend_position = NULL,
+    legend_position = "bottom",
     legend_y_position = 0,
 
     # Tooltip
