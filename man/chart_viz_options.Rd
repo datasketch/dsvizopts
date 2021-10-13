@@ -87,7 +87,7 @@ dsviz_default_opts(...)
 
 \item{searchable}{Enable global table searching? Default is FALSE.}
 
-\item{selection}{Enable row selection? Either "multiple" or "single" for multiple or single row selection. Default is "single".}
+\item{selection}{Enable row selection? Either "multiple" or "single" for multiple or single row selection. Default is NULL.}
 
 \item{showSortIcon}{Show a sort icon when sorting columns? Default is TRUE.}
 
@@ -127,6 +127,8 @@ dsviz_default_opts(...)
 \item{defaultPageSize}{Default page size for the table. Default is 10.}
 
 \item{pageSizeOptions}{Page size options for the table. Default is 10, 25, 50, 100.}
+
+\item{linksAsHyperlinks}{Cells that start with http, https or www will be converted to hyperlinks. Default is TRUE.}
 
 \item{allow_point}{Boolean. If TRUE, allow this series' points to be selected by clicking on the graphic. Default is FALSE.}
 

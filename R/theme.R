@@ -188,6 +188,9 @@ default_theme_opts <- function( logo = NULL,
     grid_y_width  = 1,
     y_max = NULL,
 
+
+    show_axes = FALSE, #show titles in sankey
+
     # SPACE THAT COVERS ALL THE GRAPHIC
     plot_margin_bottom = NULL,
     plot_margin_top = NULL,
