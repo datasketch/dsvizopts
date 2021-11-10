@@ -130,6 +130,7 @@ default_theme_opts <- function( logo = NULL,
     caption_color = "#28333f",
     caption_align = "left", # left - center - right
     caption_size = 12,
+    caption_link = " ",
 
     # REACTABLE STYLES
     table_title_color = "#28333f",
