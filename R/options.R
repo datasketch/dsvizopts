@@ -181,6 +181,7 @@ dsviz_default_opts <- function(...){
   extraOpts <- list(
     # Cat-Cat Bars
     graph_type = "grouped",
+    reversedYaxis = FALSE,
     # Scatter specific
     formatter_js = NULL,
     formatter_x_js = NULL,
