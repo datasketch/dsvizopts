@@ -247,7 +247,8 @@ dsviz_default_opts <- function(...){
     dataLabels_type = NULL,
     dataLabels_size = NULL,
     dataLabels_color = NULL,
-    dataLabels_text_outline = TRUE
+    dataLabels_text_outline = TRUE,
+    dataLabels_template = NULL
   )
 
   themeOpts <- list(

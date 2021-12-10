@@ -170,7 +170,8 @@ default_theme_opts <- function( logo = NULL,
     axis_line_y_size = NULL,
     axis_ticks_color = NULL,
     axis_tick_length = 10,
-
+    labelsRotationX = NULL,
+    labelsRotationY = NULL,
     grid_color = "#d1d9db",
     grid_line_type = "Dot",
     grid_size = 0.3,
@@ -206,6 +207,7 @@ default_theme_opts <- function( logo = NULL,
 
     # DATA LABELS STYLE
     inner_dataLabels = FALSE,
+
 
     #BAR
     bar_pointWidth = NULL,
