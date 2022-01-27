@@ -113,6 +113,7 @@ dsviz_default_opts <- function(...){
     slice_n = NULL,
     order = NULL,
     order_legend = NULL,
+    order_stacked = NULL,
     percentage = FALSE,
     percentage_col = NULL
   )
