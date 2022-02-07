@@ -242,7 +242,8 @@ dsviz_default_opts <- function(...){
     treemap_direction = "vertical", # horizontal
 
     #item plot
-    itemRscale = 1000
+    minItemRscale = 10,
+    maxItemRscale = 1000
   )
 
   dataLabelsOpts <- list(
