@@ -242,6 +242,8 @@ default_theme_opts <- function( logo = NULL,
     map_zoom = TRUE,
     map_canvas = FALSE,
     map_cluster = NULL,
+    map_tiles_zoom_update = TRUE,
+    map_tiles_id_update = FALSE,
 
     # Lines and areas
     marker_enabled = TRUE,
