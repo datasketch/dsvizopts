@@ -240,6 +240,7 @@ default_theme_opts <- function( logo = NULL,
     map_tiles = NULL,
     map_tiles_esri = "Topographic",
     map_zoom = TRUE,
+    map_canvas = FALSE,
     map_cluster = NULL,
 
     # Lines and areas
