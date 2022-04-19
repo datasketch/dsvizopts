@@ -254,8 +254,18 @@ default_theme_opts <- function( logo = NULL,
     plotLine_value_x = NULL,
     plotLine_value_y = NULL,
     plotLine_label_x = NULL,
-    plotLine_label_y = NULL
+    plotLine_label_y = NULL,
 
+    #wordCloud
+    text_weight = 900,
+    wordMaxFont = 5,
+    wordMinFont = 25,
+    wordSpiral = 'square', #rectangular, archimedean
+    placementStrategy = 'center', # random,
+    wordFromRotation = 0,
+    wordToRotation = 0,
+    wordOrientations = 0,
+    stopwords = TRUE
   )
 }
 

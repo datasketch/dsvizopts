@@ -172,6 +172,7 @@ dsviz_default_opts <- function(...){
   )
 
   shinyOpts <- list(
+    lang = "es",
     allow_point = FALSE,
     color_click = NULL,
     color_hover = NULL,
