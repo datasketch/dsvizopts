@@ -237,6 +237,9 @@ dsviz_default_opts <- function(...){
     map_projection_rotation = 0,
     map_projection_params = 45,
     map_min_zoom = 1,
+    map_max_zoom = 18,
+    map_zoom_delta = 0.5,
+    map_zoom_snap = 0.5,
 
     #treemap
     treemap_layout = "squarified", # one of: stripes, squarified, strip, slice and dice (NULL)
