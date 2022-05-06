@@ -240,6 +240,13 @@ dsviz_default_opts <- function(...){
     map_max_zoom = 18,
     map_zoom_delta = 0.5,
     map_zoom_snap = 0.5,
+    map_opacity = 1,
+    map_name_extra = NULL,
+    map_extra_layer = FALSE,
+    map_extra_weight = 1,
+    map_extra_opacity = 0.5,
+    map_extra_fillColor = "transparent",
+    map_extra_color = "#000000",
 
     #treemap
     treemap_layout = "squarified", # one of: stripes, squarified, strip, slice and dice (NULL)
