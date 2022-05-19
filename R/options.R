@@ -251,7 +251,8 @@ dsviz_default_opts <- function(...){
     #treemap
     treemap_layout = "squarified", # one of: stripes, squarified, strip, slice and dice (NULL)
     treemap_direction = "vertical", # horizontal
-
+    treemap_borderWidth_levelOne = 3,
+    treemap_borderColor_levelOne = "#ccccccc",
     #item plot
     minItemRscale = 10,
     maxItemRscale = 1000
