@@ -253,6 +253,8 @@ dsviz_default_opts <- function(...){
     treemap_direction = "vertical", # horizontal
     treemap_borderWidth_levelOne = 3,
     treemap_borderColor_levelOne = "#ccccccc",
+    treemap_dataLabels_levelTwo = TRUE,
+    treemap_dataLabels_levelOne = TRUE,
     #item plot
     minItemRscale = 10,
     maxItemRscale = 1000
