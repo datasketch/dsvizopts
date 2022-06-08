@@ -113,6 +113,6 @@
 \item{label_text_outline}{? Text outline}
 }
 \description{
-
+Theme options
 }
 \keyword{internal}
