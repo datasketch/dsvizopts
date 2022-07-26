@@ -187,6 +187,7 @@ dsviz_default_opts <- function(...){
     # Scatter specific
     formatter_js = NULL,
     formatter_x_js = NULL,
+    scatter_agg = FALSE,
     scatter_format_num_sample_x = "1,500.00",
     scatter_format_num_sample_y = "1,500.00",
     scatter_format_num_sample_size = "1,500.00",
