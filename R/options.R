@@ -115,7 +115,8 @@ dsviz_default_opts <- function(...){
     order_legend = NULL,
     order_stacked = NULL,
     percentage = FALSE,
-    percentage_col = NULL
+    percentage_col = NULL,
+    percentage_intra = FALSE
   )
 
   styleOpts <- list(
