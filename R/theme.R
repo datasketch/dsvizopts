@@ -131,7 +131,7 @@ default_theme_opts <- function( logo = NULL,
     caption_align = "left", # left - center - right
     caption_size = 12,
     caption_link = " ",
-
+    caption_margin = 15,
     # REACTABLE STYLES
     table_title_color = "#28333f",
     table_title_family = "IBM Plex Sans",
