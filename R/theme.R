@@ -190,6 +190,7 @@ default_theme_opts <- function( logo = NULL,
     grid_y_width  = 1,
     y_axis_align = NULL,
     y_max = NULL,
+    y_min = NULL,
 
 
     show_axes = FALSE, #show titles in sankey
