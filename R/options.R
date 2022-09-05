@@ -123,6 +123,7 @@ dsviz_default_opts <- function(...){
     axis_text_angle = NA,
     color_by = NULL,# which variable?
     format_dat = NULL,
+    format_numericSymbols = FALSE,
     format_sample_dat = NULL,
     format_sample_num = "1,500.00",
     format_sample_cat = NULL,#"Title case",
