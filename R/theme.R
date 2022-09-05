@@ -230,7 +230,7 @@ default_theme_opts <- function( logo = NULL,
     legend_reversed = FALSE,
     legend_position = "bottom",
     legend_y_position = 0,
-
+    legend_maxHeight = 200,
     # Tooltip
     tooltip_family = NULL,
 
