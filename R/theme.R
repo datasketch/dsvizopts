@@ -83,7 +83,7 @@ default_theme_opts <- function( logo = NULL,
                                 label_text_decoration = NULL,
                                 label_text_outline = NULL,
                                 marker_enabled = TRUE,
-                                legend_decreasing=TRUE){
+                                legend_decreasing=FALSE){
 
   list(
     logo = "public",
