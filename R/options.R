@@ -81,6 +81,7 @@
 #' @param dataLabels_size Number. Label font size
 #' @param dataLabels_color String with hexadecimal color for the label
 #' @param dataLabels_text_outline Boolean. If TRUE, data labels are show with outline
+#' @param legend_decreasing Leaflet legend, If True decreasing order
 #' @param opts All of the previous options can be passed as list of options opts
 #' @name chart_viz_options
 #'
@@ -260,7 +261,8 @@ dsviz_default_opts <- function(...){
     treemap_dataLabels_levelOne = TRUE,
     #item plot
     minItemRscale = 10,
-    maxItemRscale = 1000
+    maxItemRscale = 1000,
+    legend_decreasing=FALSE
   )
 
   dataLabelsOpts <- list(
