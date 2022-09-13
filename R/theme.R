@@ -82,7 +82,8 @@ default_theme_opts <- function( logo = NULL,
                                 label_size = NULL,
                                 label_text_decoration = NULL,
                                 label_text_outline = NULL,
-                                marker_enabled = TRUE){
+                                marker_enabled = TRUE,
+                                legend_decreasing=FALSE){
 
   list(
     logo = "public",
@@ -231,6 +232,7 @@ default_theme_opts <- function( logo = NULL,
     legend_position = "bottom",
     legend_y_position = 0,
     legend_maxHeight = 200,
+    legend_decreasing = FALSE,
     # Tooltip
     tooltip_family = NULL,
 
