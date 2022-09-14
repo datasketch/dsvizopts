@@ -273,7 +273,8 @@ dsviz_default_opts <- function(...){
     dataLabels_color = NULL,
     dataLabels_text_outline = TRUE,
     dataLabels_template = NULL,
-    dataLabels_align = "middle"
+    dataLabels_align = "bottom",
+    dataLabels_inside = FALSE
   )
 
   themeOpts <- list(
