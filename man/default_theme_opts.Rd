@@ -85,7 +85,8 @@ default_theme_opts(
   label_size = NULL,
   label_text_decoration = NULL,
   label_text_outline = NULL,
-  marker_enabled = TRUE
+  marker_enabled = TRUE,
+  legend_decreasing = FALSE
 )
 }
 \description{

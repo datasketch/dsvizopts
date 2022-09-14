@@ -150,6 +150,8 @@ dsviz_default_opts(...)
 
 \item{dataLabels_text_outline}{Boolean. If TRUE, data labels are show with outline}
 
+\item{legend_decreasing}{Leaflet legend, If True decreasing order}
+
 \item{opts}{All of the previous options can be passed as list of options opts}
 }
 \description{
