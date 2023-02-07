@@ -235,6 +235,8 @@ default_theme_opts <- function( logo = NULL,
     legend_y_position = 0,
     legend_maxHeight = 200,
     legend_decreasing = FALSE,
+    legend_cuts = NULL,
+    legend_color_cuts = NULL,
     # Tooltip
     tooltip_family = NULL,
 
