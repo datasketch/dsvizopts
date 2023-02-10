@@ -33,7 +33,7 @@
 #' @param format_sample_cat A specifier to format categories, e.g. "TITTLE", "lowercase", "Title Case"
 #' @param format_sample_num A specifier to format numerical value(s), e.g. "1,234.56" or "1'234.5678"
 #' @param format_sample_dat A specifier to format date(s), e.g. "28/04/2020" or "February 28th 2020"
-#' @param format_treemap_catcatnum A specifier to format numerical value(s)  - catcatnum - treemap, e.g.12K, 12M
+#' @param datalabel_formmater_js A specifier to format numerical value(s)  - catcatnum - treemap, e.g.12K, 12M
 #' @param locale Locale to use, e.g. "fr-FR" for french.
 #' @param label_wrap Is this a numeric vector of length one or just an integer to choose the number of characters of the label text (overflowing text will be placed in a new line below).
 #' @param label_wrap_legendIs this a numeric vector of length one or just an integer to choose the number of characters in each line of text in the legend (overflowing text will be placed in a new line below.)
@@ -128,7 +128,7 @@ dsviz_default_opts <- function(...){
     format_numericSymbols = FALSE,
     format_sample_dat = NULL,
     format_sample_num = "1,500.00",
-    format_treemap_catcatnum = FALSE,
+    datalabel_formmater_js = FALSE,
     format_sample_cat = NULL,#"Title case",
     locale = "en-US",
     label_wrap = 12,
