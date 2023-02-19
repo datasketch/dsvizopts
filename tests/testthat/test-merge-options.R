@@ -13,7 +13,15 @@ test_that("Merge options", {
   mergeOptions(list(a = "A2"), defaults = options_flatten(defaults))
 
 
+  # Merge options
 
+  viz_fun <- function(...){
+    titles_opts <- merge_dsviz_options(...)
+    titles_opts$titles
+  }
+
+  expect_equal(viz_fun(title = "Hello"),
+               viz_fun(opts = list(title = "Hello")))
 
 
 
