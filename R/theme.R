@@ -241,7 +241,7 @@ default_theme_opts <- function( logo = NULL,
     tooltip_family = NULL,
 
     # MAP STYLES
-    border_weight = 2,
+    border_weight = 1,
     border_color = "#28333f",
     topo_fill_opacity = 0.8,
     max_topo_fill_opacity = 1,
