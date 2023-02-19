@@ -291,7 +291,7 @@ dsviz_default_opts <- function(...){
     style = styleOpts,
     chart = chartOpts,
     table = tableOpts,
-    title = titleOpts,
+    titles = titleOpts,
     dataLabels = dataLabelsOpts,
     extra = extraOpts,
     shiny = shinyOpts,

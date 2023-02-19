@@ -17,7 +17,7 @@ merge_dsviz_options <- function(...){
     style = pull_opt_group(opts_flat, "style"),
     chart = pull_opt_group(opts_flat, "chart"),
     table = pull_opt_group(opts_flat, "table"),
-    title = pull_opt_group(opts_flat, "title"),
+    titles = pull_opt_group(opts_flat, "titles"),
     dataLabels = pull_opt_group(opts_flat, "dataLabels"),
     extra = pull_opt_group(opts_flat, "extra"),
     shiny = pull_opt_group(opts_flat, "shiny"),
