@@ -1,6 +1,6 @@
 Package: dsvizopts
 Title: Viz options
-Version: 0.2.0
+Version: 0.2.1
 Author: Datasketch
 Description: List with general options to graphs
 Depends:

@@ -1,3 +1,4 @@
-# dsvizopts 0.0.0.9000
+# dsvizopts 0.2.1
 
-* Added a `NEWS.md` file to track changes to the package.
+- Reorganized some files
+- Made sure tests are passing
