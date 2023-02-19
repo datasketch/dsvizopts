@@ -6,27 +6,39 @@ test_that("Options are merged correctly", {
   ## Merge options
 
   defaults <- list(a = "AAA", b = "BBB", sub = list(sub1 = "S"))
+
+
   flat_defaults <- options_flatten(defaults)
+
   myfun <- function(x, ...){
-    opts <- mergeOptions(..., defaults = options_flatten(defaults))
+    args <- list(...)
+    #message("... args")
+    #str(args)
+    opts <- mergeOptions(args, defaults = options_flatten(defaults))
     opts
   }
+
+  # if I provide an option not in the list, it will ignore it
   myfun_opts <- myfun(x = 0)
-  # expect_equal(myfun_opts, discard(defaults, is.null))
+
   expect_equal(myfun_opts, flat_defaults)
 
   myfun_opts <- myfun(x = 0, a = "a", b = "b")
   expect_equal(myfun_opts, list(a = "a", b = "b",sub1 = "S"))
+
   myfun_opts <- myfun(x = 0, agg = "MyAgg")
   # expect_true(is_flat_list(myfun_opts))
   expect_equal(myfun_opts$agg,"MyAgg")
   expect_equal(myfun_opts, c(flat_defaults, list(agg = "MyAgg")))
 
-  myfun_opts <- myfun(x = 0, opts = list(agg = "MyAggList", title = "New Title"))
+  opts <- list(agg = "MyAgg2", title = "New Title")
+  myfun_opts <- myfun(x = 0, opts = opts)
+
+
   expect_true(is_flat_list(myfun_opts))
-  expect_equal(myfun_opts$agg,"MyAggList")
+  expect_equal(myfun_opts$agg,"MyAgg2")
   expect_equal(myfun_opts$title,"New Title")
-  expect_equal(myfun_opts, c(flat_defaults, list(agg = "MyAggList", title =  "New Title")))
+  expect_equal(myfun_opts, c(flat_defaults, list(agg = "MyAgg2", title =  "New Title")))
 
   myfun_opts <- myfun(x = 0, agg = "MyAgg", opts = list(agg = "MyAggOpts"))
   expect_true(is_flat_list(myfun_opts))
@@ -37,9 +49,9 @@ test_that("Options are merged correctly", {
   opts_defaults <- dsvizopts:::dsviz_defaults()
   fun <- function(...){merge_dsviz_options(...)}
   opts_dsviz <- fun()
-  expect_equal(names(opts_dsviz), names(opts_defaults))
-  lapply(names(opts_dsviz), function(x){
-    message(x)
+  expect_equal(sort(names(opts_dsviz)), sort(names(opts_defaults)))
+  purrr::walk(names(opts_dsviz), function(x){
+    #message(x)
     expect_equal(opts_dsviz[[x]], opts_defaults[[x]])
   })
 

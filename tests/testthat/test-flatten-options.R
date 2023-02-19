@@ -14,12 +14,13 @@ test_that("Options can be flattened",{
   expect_true(is_flat_list(flatten(x)))
   x <- list(a = 1, b = list(b1name = "b1", b2name = NULL),
             c = list(c1name = "c", c2name = c("c2a","c2b")))
-  # OJO options flatten drop nulls
+
   expect_equal(options_flatten(x),
                list(a = 1, b1name = "b1", b2name = NULL,
                     c1name = "c", c2name = c("c2a","c2b")))
   expect_equal(names(options_flatten(x)),c("a","b1name","b2name","c1name","c2name"))
 
+  # flatten takes the last value provided
   x <- list(a = "a", bg = 0, opts = list(bg = 1, theme = list(bg = 3)))
   expect_equal(options_flatten(x), list(a = "a", bg = 3))
 
