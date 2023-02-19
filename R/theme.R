@@ -243,7 +243,7 @@ default_theme_opts <- function( logo = NULL,
     # MAP STYLES
     border_weight = 1,
     border_color = "#28333f",
-    topo_fill_opacity = 0.8,
+    topo_fill_opacity = 0.9,
     max_topo_fill_opacity = 1,
     map_provider_tile = "leaflet", #leaflet or ESRI
     map_extra_layout = NULL, #other layouts (URL)
