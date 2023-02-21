@@ -55,6 +55,8 @@ dsviz_default_opts(...)
 
 \item{format_sample_dat}{A specifier to format date(s), e.g. "28/04/2020" or "February 28th 2020"}
 
+\item{datalabel_formmater_js}{A specifier to format numerical value(s)  - catcatnum - treemap, e.g.12K, 12M}
+
 \item{locale}{Locale to use, e.g. "fr-FR" for french.}
 
 \item{label_wrap}{Is this a numeric vector of length one or just an integer to choose the number of characters of the label text (overflowing text will be placed in a new line below).}

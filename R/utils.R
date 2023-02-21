@@ -1,13 +1,5 @@
 #' @importFrom dplyr %>%
 
-#' @export
-get_extra_opts <- function(opts, pattern = "."){
-  extras <- grepl(pattern, names(opts$extra))
-  extra_opts <- opts$extra[extras]
-  # names(extra_opts) <- gsub("^._","", names(extra_opts))
-  extra_opts
-}
-
 
 `%||%` <- function (x, y) {
   if (rlang::is_empty(x))

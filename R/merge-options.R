@@ -8,20 +8,24 @@ merge_dsviz_options <- function(...){
   opts_flat <- mergeOptions(args, defaults = default_opts)
 
   theme <- pull_opt_group(opts_flat, "theme")
-  theme$has_subtitle <- !is.null(opts_flat$subtitle)
 
   list(
-    preprocess = pull_opt_group(opts_flat, "preprocess"),
-    summarize = pull_opt_group(opts_flat, "summarize"),
-    postprocess = pull_opt_group(opts_flat, "postprocess"),
-    style = pull_opt_group(opts_flat, "style"),
+    area = pull_opt_group(opts_flat, "area"),
+    bar = pull_opt_group(opts_flat, "bar"),
+    bubbles = pull_opt_group(opts_flat, "bubbles"),
     chart = pull_opt_group(opts_flat, "chart"),
+    data_labels = pull_opt_group(opts_flat, "data_labels"),
+    donut = pull_opt_group(opts_flat, "donut"),
+    line = pull_opt_group(opts_flat, "line"),
+    map = pull_opt_group(opts_flat, "map"),
+    pie = pull_opt_group(opts_flat, "pie"),
+    prep = pull_opt_group(opts_flat, "prep"),
+    scatter = pull_opt_group(opts_flat, "scatter"),
+    shiny = pull_opt_group(opts_flat, "shiny"),
     table = pull_opt_group(opts_flat, "table"),
     titles = pull_opt_group(opts_flat, "titles"),
-    dataLabels = pull_opt_group(opts_flat, "dataLabels"),
-    extra = pull_opt_group(opts_flat, "extra"),
-    shiny = pull_opt_group(opts_flat, "shiny"),
-    theme = theme
+    treemap = pull_opt_group(opts_flat, "treemap"),
+    theme = pull_opt_group(opts_flat, "theme")
   )
 }
 

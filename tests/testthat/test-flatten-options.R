@@ -31,9 +31,9 @@ test_that("Options can be flattened",{
   ## Pull group
 
   opts <- dsviz_defaults(flat = TRUE)
-  expect_equal(dsviz_default_opts()$summarize, pull_opt_group(opts, "summarize"))
+  expect_equal(dsviz_default_opts()$theme, pull_opt_group(opts, "theme"))
   expect_error(pull_opt_group(opts, "stylesss"))
-  expect_equal(dsviz_default_opts()$style, pull_opt_group(opts, "style"))
+  expect_equal(dsviz_default_opts()$prep, pull_opt_group(opts, "prep"))
 
 
 })

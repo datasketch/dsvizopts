@@ -92,212 +92,28 @@ dsviz_default_opts <- function(...){
   # opts$palette_colors <- opts$palette_colors %||% opts$theme$palette_colors
   # opts$background_color <- opts$background_color %||% opts$theme$background_color
   # opts
-  titleOpts <- list(
-    title = NULL,
-    ver_title = NULL,
-    hor_title = NULL,
-    subtitle = NULL,
-    caption = NULL,
-    legend_title = NULL
-  )
-
-  preprocessOpts <- list(
-    drop_na = FALSE,
-    drop_na_legend = FALSE,
-    na_label = "(NA)"
-  )
-  summarizeOpts <- list(
-    agg = "sum",
-    agg_text = NULL
-  )
-  postprocessOpts <- list(
-    sort = "no",
-    slice_n = NULL,
-    order = NULL,
-    order_legend = NULL,
-    order_stacked = NULL,
-    percentage = FALSE,
-    percentage_col = NULL,
-    percentage_intra = FALSE
-  )
-
-  styleOpts <- list(
-    axis_text_angle = NA,
-    color_by = NULL,# which variable?
-    format_dat = NULL,
-    format_numericSymbols = FALSE,
-    format_sample_dat = NULL,
-    format_sample_num = "1,500.00",
-    datalabel_formmater_js = FALSE,
-    format_sample_cat = NULL,#"Title case",
-    locale = "en-US",
-    label_wrap = 12,
-    spline = FALSE,
-    invert = FALSE,
-    prefix = "",
-    suffix = "",
-    label_wrap_legend = 12,
-    label_ratio = 1
-  )
-  chartOpts <- list(
-    orientation = "ver",
-    graph_type = "grouped",
-    highlight_value = NULL,
-    highlight_value_color = "#50c5b7",
-    tooltip = ""
-  )
-
-  tableOpts <- list(
-    groupBy = NULL,
-    sortable = TRUE,
-    resizable = FALSE,
-    filterable = FALSE,
-    searchable = FALSE,
-    selection = NULL,
-    showSortIcon = TRUE,
-    showSortable =  TRUE,
-    height = "auto",
-    width = "auto",
-    fullWidth = TRUE,
-    wrap = TRUE,
-    outlined = FALSE,
-    bordered = FALSE,
-    borderless = TRUE,
-    striped = TRUE,
-    compact = FALSE,
-    highlight = FALSE,
-    pagination = TRUE,
-    showPagination = NULL,
-    showPageInfo = TRUE,
-    showPageSizeOptions = FALSE,
-    paginationType = "numbers",
-    defaultPageSize = 10,
-    pageSizeOptions = c(10, 25, 50, 100),
-    linksAsHyperlinks = TRUE
-  )
-
-  shinyOpts <- list(
-    lang = "es",
-    allow_point = FALSE,
-    color_click = NULL,
-    color_hover = NULL,
-    cursor =  NULL,
-    clickFunction = NULL
-  )
-
-  extraOpts <- list(
-    # Cat-Cat Bars
-    graph_type = "grouped",
-    reversedYaxis = FALSE,
-    # Scatter specific
-    formatter_js = NULL,
-    formatter_x_js = NULL,
-    scatter_agg = FALSE,
-    scatter_format_num_sample_x = "1,500.00",
-    scatter_format_num_sample_y = "1,500.00",
-    scatter_format_num_sample_size = "1,500.00",
-    scatter_prefix_x = "",
-    scatter_prefix_y = "",
-    scatter_prefix_size = "",
-    scatter_suffix_x = "",
-    scatter_suffix_y = "",
-    scatter_suffix_size = "",
-    scatter_percentage_x = FALSE,
-    scatter_percentage_y = FALSE,
-    scatter_percentage_size = FALSE,
-    scatter_regression = FALSE,
-    scatter_regression_color = '#d35400',
-    scatter_regression_equation = TRUE,
-
-    date_intervals = NULL,
-    animation_duration = 0,
-    # Area specific
-    area_alpha = 0.5,
-    # Bubbles specific
-    bubble_min = 30,
-    bubble_max = 120,
-    bubble_opacity = 1,
-    # Pie
-    pie_dataLabels_pos = 1.1,
-    # Donut
-    donut_dataLabels_pos = 1.1,
-    donut_width = 0.2,
-    # Map specific
-    map_name = "world_countries",
-    map_color_scale = "Numeric",
-    map_label_by = "name",
-    map_bins = 5,
-    map_bins_pretty = FALSE,
-    map_quantile = 4,
-    map_cutoff_points = NULL,
-    map_radius = 5,
-    map_min_size = 1,
-    map_max_size = 10,
-    map_stroke = FALSE,
-    map_add_alaska = FALSE,
-    map_graticule = FALSE,
-    map_graticule_interval = 5,
-    map_projection = "mercator",
-    map_projection_lat = 90,
-    map_projection_long = 0,
-    map_projection_rotation = 0,
-    map_projection_params = 45,
-    map_min_zoom = 1,
-    map_max_zoom = 18,
-    map_zoom_delta = 0.5,
-    map_zoom_snap = 0.5,
-    map_opacity = 1,
-    map_name_extra = NULL,
-    map_extra_layer = FALSE,
-    map_extra_weight = 1,
-    map_extra_opacity = 0.5,
-    map_extra_fillColor = "transparent",
-    map_extra_color = "#000000",
-
-    #treemap
-    treemap_layout = "squarified", # one of: stripes, squarified, strip, slice and dice (NULL)
-    treemap_direction = "vertical", # horizontal
-    treemap_borderWidth_levelOne = 3,
-    treemap_borderColor_levelOne = "#ccccccc",
-    treemap_dataLabels_levelTwo = TRUE,
-    treemap_dataLabels_levelOne = TRUE,
-    #item plot
-    minItemRscale = 10,
-    maxItemRscale = 1000,
-    legend_decreasing=FALSE
-  )
-
-  dataLabelsOpts <- list(
-    dataLabels_show = FALSE,
-    dataLabels_format_sample = NULL,
-    dataLabels_type = NULL,
-    dataLabels_size = NULL,
-    dataLabels_color = NULL,
-    dataLabels_text_outline = TRUE,
-    dataLabels_template = NULL,
-    dataLabels_align = "bottom",
-    dataLabels_inside = FALSE
-  )
-
-  themeOpts <- list(
-    has_subtitle = FALSE
-  )
-  themeOpts <- modifyList(themeOpts, default_theme_opts(), keep.null = TRUE)
 
   list(
-    preprocess = preprocessOpts,
-    summarize = summarizeOpts,
-    postprocess = postprocessOpts,
-    style = styleOpts,
-    chart = chartOpts,
-    table = tableOpts,
-    titles = titleOpts,
-    dataLabels = dataLabelsOpts,
-    extra = extraOpts,
-    shiny = shinyOpts,
-    theme = themeOpts
+    area = default_opts_area(),
+    bar = default_opts_bar(),
+    bubbles = default_opts_bubbles(),
+    chart = default_opts_chart(),
+    data_labels = default_opts_data_labels(),
+    donut = default_opts_donut(),
+    line = default_opts_line(),
+    map = default_opts_map(),
+    pie = default_opts_pie(),
+    prep = default_opts_prep(),
+    scatter = default_opts_scatter(),
+    shiny = default_opts_shiny(),
+    table = default_opts_table(),
+    titles = default_opts_titles(),
+    treemap = default_opts_treemap(),
+    theme =  default_opts_theme()
   )
 }
+
+
 #' @export
 dsviz_defaults <- function(flat = FALSE){
   opts <- dsviz_default_opts()

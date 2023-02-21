@@ -2,7 +2,7 @@
 #' Theme Options
 #'
 #' @export
-default_theme_opts <- function( logo = NULL,
+default_opts_theme <- function( logo = NULL,
                                 logo_position = NULL,
                                 palette_colors = NULL,
                                 palette_colors_categorical = NULL,
@@ -115,6 +115,7 @@ default_theme_opts <- function( logo = NULL,
     line_size = 0.5,
 
     # TITLE STYLES
+    has_subtitle = FALSE,
     title_color = "#28333f",
     title_align = "left", # left - center - right
     title_family = "IBM Plex Sans",
@@ -133,34 +134,13 @@ default_theme_opts <- function( logo = NULL,
     caption_size = 12,
     caption_link = " ",
     caption_margin = 15,
-    # REACTABLE STYLES
-    table_title_color = "#28333f",
-    table_title_family = "IBM Plex Sans",
-    table_title_size = 30,
-    table_title_weight = "normal",
-    table_subtitle_color = "#28333f",
-    table_subtitle_family = "IBM Plex Sans",
-    table_subtitle_size = 18,
-    table_subtitle_weight = "normal",
-    table_caption_color = "#28333f",
-    table_caption_family = "IBM Plex Sans",
-    table_caption_size = 11,
-    table_caption_weight = "normal",
 
-    header_text_color = "#ffffff",
-    header_text_family = "IBM Plex Sans",
-    header_text_size = 21,
-    header_text_weight = "bold",
-    cell_text_color = "#28333f",
-    cell_text_family = "IBM Plex Sans",
-    cell_text_size = 18,
-    cell_text_weight = "normal",
-    link_color = "#e59fd7",
-    header_background = "#385573",
-    table_background = "#ffffff",
-    table_border_color = "#BBBDC0",
-    zebra_stripe_color = "#fafafa",
-    desactivated_controls = "#becacc",
+    # Tooltip
+    tooltip_family = NULL,
+    tooltip_size = 14,
+    tooltip_background = "#ffffff",
+    tooltip_width = NULL,
+    tooltip_opacity = 1,
 
     # GENERAL AXIS
     axis_title_color = NULL,
@@ -217,6 +197,8 @@ default_theme_opts <- function( logo = NULL,
     bar_pointWidth = NULL,
     bar_padding = 0,
     bar_groupWidth = 0.1,
+
+
     # LEGEND STYLE
     legend_background = "transparent",
     legend_backgroundBorderColor = "#dddddd",
@@ -237,8 +219,6 @@ default_theme_opts <- function( logo = NULL,
     legend_decreasing = FALSE,
     legend_cuts = NULL,
     legend_color_cuts = NULL,
-    # Tooltip
-    tooltip_family = NULL,
 
     # MAP STYLES
     border_weight = 1,
@@ -277,7 +257,37 @@ default_theme_opts <- function( logo = NULL,
     wordFromRotation = 0,
     wordToRotation = 0,
     wordOrientations = 0,
-    stopwords = TRUE
+    stopwords = TRUE,
+
+    # REACTABLE STYLES
+    table_title_color = "#28333f",
+    table_title_family = "IBM Plex Sans",
+    table_title_size = 30,
+    table_title_weight = "normal",
+    table_subtitle_color = "#28333f",
+    table_subtitle_family = "IBM Plex Sans",
+    table_subtitle_size = 18,
+    table_subtitle_weight = "normal",
+    table_caption_color = "#28333f",
+    table_caption_family = "IBM Plex Sans",
+    table_caption_size = 11,
+    table_caption_weight = "normal",
+
+    header_text_color = "#ffffff",
+    header_text_family = "IBM Plex Sans",
+    header_text_size = 21,
+    header_text_weight = "bold",
+    cell_text_color = "#28333f",
+    cell_text_family = "IBM Plex Sans",
+    cell_text_size = 18,
+    cell_text_weight = "normal",
+    link_color = "#e59fd7",
+    header_background = "#385573",
+    table_background = "#ffffff",
+    table_border_color = "#BBBDC0",
+    zebra_stripe_color = "#fafafa",
+    desactivated_controls = "#becacc"
+
   )
 }
 

@@ -1,0 +1,37 @@
+
+default_opts_map <- function(){
+
+  list(
+    # Map specific
+    map_name = "world_countries",
+    map_color_scale = "Numeric",
+    map_label_by = "name",
+    map_bins = 5,
+    map_bins_pretty = FALSE,
+    map_quantile = 4,
+    map_cutoff_points = NULL,
+    map_radius = 5,
+    map_min_size = 1,
+    map_max_size = 10,
+    map_stroke = FALSE,
+    map_add_alaska = FALSE,
+    map_graticule = FALSE,
+    map_graticule_interval = 5,
+    map_projection = "mercator",
+    map_projection_lat = 90,
+    map_projection_long = 0,
+    map_projection_rotation = 0,
+    map_projection_params = 45,
+    map_min_zoom = 1,
+    map_max_zoom = 18,
+    map_zoom_delta = 0.5,
+    map_zoom_snap = 0.5,
+    map_opacity = 1,
+    map_name_extra = NULL,
+    map_extra_layer = FALSE,
+    map_extra_weight = 1,
+    map_extra_opacity = 0.5,
+    map_extra_fillColor = "transparent",
+    map_extra_color = "#000000"
+  )
+}
