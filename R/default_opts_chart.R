@@ -10,7 +10,7 @@ default_opts_chart <- function(){
     #label_ratio = 1 # Nudge from point label
     highlight_value = NULL,
     highlight_value_color = "#50c5b7",
-    tooltip_template = "",
+    tooltip_template = NULL,
     animation_duration = 0,
     #item plot
     # minItemRscale = 10,
