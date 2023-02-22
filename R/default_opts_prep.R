@@ -19,6 +19,7 @@ default_opts_prep <- function(){
     format_sample_cat = NULL, #"Title case",
     format_sample_dat = NULL,
     format_sample_num = "1,500.00",
+    si_prefix = FALSE, # sistema internacional M, K, B etc
     datalabel_formmater_js = FALSE,
     #format_numeric_symbols = FALSE, # Qué es?
     label_wrap_legend = 12,
