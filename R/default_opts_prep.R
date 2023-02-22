@@ -7,6 +7,8 @@ default_opts_prep <- function(){
     agg = "sum",
     agg_text = NULL, # Ex. Text for aggregation sum_agg_text
     # can be a vector for all numeric vars
+    collapse_rows = FALSE,
+    agg_collapse_rows = "sum",
     sort = "no",
     slice_n = NULL,
     order = NULL,
