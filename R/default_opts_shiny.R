@@ -9,6 +9,7 @@ default_opts_shiny <- function(){
     shiny_color_click = NULL,
     shiny_color_hover = NULL,
     shiny_cursor =  NULL,
-    shiny_clickable = FALSE
+    shiny_clickable = FALSE,
+    shiny_input_name = "hcClicked"
   )
 }
