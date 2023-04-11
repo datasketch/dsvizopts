@@ -105,6 +105,7 @@ dsviz_default_opts <- function(...){
     pie = default_opts_pie(),
     prep = default_opts_prep(),
     scatter = default_opts_scatter(),
+    sankey = default_opts_sankey(),
     shiny = default_opts_shiny(),
     table = default_opts_table(),
     titles = default_opts_titles(),

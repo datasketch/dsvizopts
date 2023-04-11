@@ -21,6 +21,7 @@ merge_dsviz_options <- function(...){
     pie = pull_opt_group(opts_flat, "pie"),
     prep = pull_opt_group(opts_flat, "prep"),
     scatter = pull_opt_group(opts_flat, "scatter"),
+    sankey = pull_opt_group(opts_flat, "sankey"),
     shiny = pull_opt_group(opts_flat, "shiny"),
     table = pull_opt_group(opts_flat, "table"),
     titles = pull_opt_group(opts_flat, "titles"),
