@@ -233,7 +233,6 @@ default_opts_theme <- function( logo = NULL,
     map_zoom = TRUE,
     map_canvas = FALSE,
     map_options = NULL,
-    map_cluster = NULL,
     map_tiles_zoom_update = TRUE,
     map_tiles_id_update = FALSE,
 

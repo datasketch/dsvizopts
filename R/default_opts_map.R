@@ -10,7 +10,7 @@ default_opts_map <- function(){
     map_bins_pretty = FALSE,
     map_quantile = 4,
     map_cutoff_points = NULL,
-    map_radius = 5,
+    map_radius = NULL,
     map_min_size = 1,
     map_max_size = 10,
     map_stroke = FALSE,
@@ -32,6 +32,14 @@ default_opts_map <- function(){
     map_extra_weight = 1,
     map_extra_opacity = 0.5,
     map_extra_fillColor = "transparent",
-    map_extra_color = "#000000"
+    map_extra_color = "#000000",
+    map_cluster = FALSE,
+    map_basic = TRUE,
+    map_circle_color = NULL,
+    map_circle_weight = 0,
+    map_circle_opacity = 0.8,
+    map_circle_fill = NULL,
+    map_circle_color = NULL,
+    map_circle_fill_opactity = 1
   )
 }
