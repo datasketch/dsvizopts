@@ -6,6 +6,7 @@ default_opts_map <- function(){
     map_name = "world_countries",
     map_color_scale = "Numeric",
     map_label_by = "name",
+    map_color = NULL,
     map_bins = 5,
     map_bins_pretty = FALSE,
     map_quantile = 4,
@@ -40,6 +41,7 @@ default_opts_map <- function(){
     map_circle_opacity = 0.8,
     map_circle_fill = NULL,
     map_circle_color = NULL,
-    map_circle_fill_opactity = 1
+    map_circle_fill_opactity = 1,
+    map_hex_opacity = 0.8
   )
 }
