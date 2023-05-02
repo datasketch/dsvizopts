@@ -4,6 +4,7 @@ default_opts_prep <- function(){
     drop_na = FALSE,
     drop_na_legend = FALSE,
     na_label = "(NA)",
+    agg_data = TRUE,
     agg = "sum",
     agg_text = NULL, # Ex. Text for aggregation sum_agg_text
     # can be a vector for all numeric vars
