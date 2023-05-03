@@ -219,7 +219,7 @@ default_opts_theme <- function( logo = NULL,
     legend_decreasing = FALSE,
     legend_cuts = NULL,
     legend_color_cuts = NULL,
-
+    legend_labels = NULL,
     # MAP STYLES
     border_weight = 1,
     border_color = "#28333f",
