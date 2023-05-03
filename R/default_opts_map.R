@@ -43,6 +43,7 @@ default_opts_map <- function(){
     map_circle_color = NULL,
     map_circle_fill_opactity = 1,
     map_hex_opacity = 0.8,
-    map_legend_discrete = FALSE
+    map_legend_discrete = FALSE,
+    map_legend_position = NULL
   )
 }
