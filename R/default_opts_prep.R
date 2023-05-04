@@ -4,6 +4,7 @@ default_opts_prep <- function(){
     drop_na = FALSE,
     drop_na_legend = FALSE,
     na_label = "(NA)",
+    na_rm = TRUE,
     agg_data = TRUE,
     agg = "sum",
     agg_text = NULL, # Ex. Text for aggregation sum_agg_text
@@ -16,6 +17,7 @@ default_opts_prep <- function(){
     order_legend = NULL,
     order_stacked = NULL,
     percentage = FALSE,
+    percentage_name = NULL,
     percentage_col = NULL,
     percentage_intra = FALSE,
     color_by = NULL,# which variable?
