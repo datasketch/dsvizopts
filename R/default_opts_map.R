@@ -14,7 +14,7 @@ default_opts_map <- function(){
     map_radius = NULL,
     map_min_size = 1,
     map_max_size = 10,
-    map_stroke = FALSE,
+    map_stroke = TRUE,
     map_add_alaska = FALSE,
     map_graticule = FALSE,
     map_graticule_interval = 5,
